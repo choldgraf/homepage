@@ -1,0 +1,72 @@
+defaults:
+  interfaces:
+  - jupyter
+  - rstudio
+  faq:
+  - q: Where can I learn more?
+    a: |
+      The [Pilot Hubs Documentation](https://pilot.2i2c.org) has all of the information that you need to use the hub, as well as information about the deployment technology.
+
+  - q: What is a Jupyter Notebook?
+    a: |
+      [Jupyter Notebook](https://jupyter.org) is an open-source web
+      application that allows you to create and share documents that contain
+      live code, equations, visualizations and narrative text. Uses include:
+      data cleaning and transformation, numerical simulation, statistical
+      modeling, data visualization, machine learning, and much more.
+
+  - q: What is JupyterHub?
+    a: |
+      [JupyterHub](https://github.com/jupyterhub/jupyterhub) brings
+      the power of notebooks to groups of users. It gives users access to
+      computational environments and resources without burdening the users with
+      installation and maintenance tasks. Users - including students,
+      researchers, and data scientists - can get their work done in their own
+      workspaces on shared resources which can be managed efficiently by system
+      administrators.
+
+  - q: Who can use this service?
+    a: |
+      This JupyterHub service is open to anyone that a hub administrator has approved.
+      Generally this means instructors and students. As this
+      is a proof-of-concept service, students should ensure they are backing up
+      their notebooks regularly if they are using this service for course
+      activities.
+vars:
+  2i2cSubTitle: &2i2cSubTitle |
+      This is a pilot service running on open source infrastructure. See the
+      [2i2c Pilot documentation](https://pilot.2i2c.org) for usage and
+      deployment information.
+  2i2cTagline: &2i2cTagline |
+    Designed, Operated and Funded by [2i2c.org](https://2i2c.org)
+  2i2cLogo: &2i2cLogo
+      img: https://2i2c.org/media/logo.png
+      width: 480px
+hubs:
+  staging.pilot.2i2c.cloud:
+    tagline: *2i2cTagline
+    logo: *2i2cLogo
+    welcome:
+      title: |
+        Welcome to the 2i2c staging JupyterHub
+      subTitle: *2i2cSubTitle
+  dask-staging.pilot.2i2c.cloud:
+    tagline: *2i2cTagline
+    logo: *2i2cLogo
+    welcome:
+      title: |
+        Welcome to the 2i2c staging Dask JupyterHub
+      subTitle: *2i2cSubTitle
+  justiceinnovationlab.pilot.2i2c.cloud:
+    logo: 
+      img: https://images.squarespace-cdn.com/content/5ee35ddb35affc21b29c0fd6/1596634079158-KLDENW5BSW2HQW4ZO0EH/JIL-Logo-Digital.png?format=1500w&content-type=image%2Fpng
+      width: 320px
+    tagline: *2i2cTagline
+    welcome:
+      title: |
+        Welcome to the [Justice Innovation Lab]( https://www.justiceinnovationlab.org/)
+        JupyterHub
+      subTitle: *2i2cSubTitle
+
+
+  

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import hubsConfig from "./hubs.yaml";
 import MarkdownIt from "markdown-it";
 import { render } from "react-dom";
-import { Center, Image, RadioGroup, Radio, Stack, ChakraProvider, Container, Heading, Text, Link, Box, Flex, Button, baseStyle, Select } from "@chakra-ui/react";
+import { Center, Image, RadioGroup, Radio, Stack, ChakraProvider, Container, Heading, Text, Link, Box, Flex, Button, baseStyle, Select, extendTheme } from "@chakra-ui/react";
 import rstudioLogo from "./logos/rstudio.svg";
 import jupyterLogo from "./logos/jupyter.svg";
 import "./index.css";
@@ -168,10 +168,24 @@ const LoginPage = () => {
     </Container>
 }
 
-document.addEventListener('DOMContentLoaded', function () {
 
+export const theme = extendTheme({
+  styles: {
+    global: {
+      a: {
+        color: "#2c7bb6",
+        _hover: {
+          color: "#1d5178",
+          textDecoration: "underline"
+        }
+      }
+    }
+  }
+})
+
+document.addEventListener('DOMContentLoaded', function () {
   render(
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <LoginPage />
     </ChakraProvider>,
     document.getElementById("root")

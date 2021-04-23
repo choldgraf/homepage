@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import hubsConfig from "./hubs.yaml";
 import MarkdownIt from "markdown-it";
 import { render } from "react-dom";
-import { Center, Image, RadioGroup, Radio, Stack, ChakraProvider, Container, Heading, Text, Link, Box, Flex, Button, baseStyle } from "@chakra-ui/react";
+import { Center, Image, RadioGroup, Radio, Stack, ChakraProvider, Container, Heading, Text, Link, Box, Flex, Button, baseStyle, Select } from "@chakra-ui/react";
 import rstudioLogo from "./logos/rstudio.svg";
 import jupyterLogo from "./logos/jupyter.svg";
 
@@ -10,7 +10,7 @@ const md = MarkdownIt();
 const pageProperties = window.pageProperties;
 
 const FAQItem = ({ q, a, ...props }) => {
-  return <Box key={q} {...props}>
+  return <Box {...props}>
     <Heading
       fontSize="lg" marginBottom={2}
       dangerouslySetInnerHTML={{ __html: md.render(q) }} />
@@ -88,15 +88,9 @@ const Header = ({ logo, tagline, ...props }) => {
   </Flex>
 }
 
-const getCurrentHub = () => {
+const getHub = (domain) => {
   const defaults = hubsConfig.defaults;
-  const queryParams = new URLSearchParams(location.search);
-  // FIXME: This should only work with dev builds
-  // Can be a security issue in prod builds, since one hub
-  // can be made to look like a different hub
-  const host = queryParams.get('host') || location.hostname;
-
-  let hub = hubsConfig.hubs[host]
+  let hub = hubsConfig.hubs[domain]
   Object.keys(defaults).forEach(key => {
     if (hub[key] === undefined) {
       hub[key] = defaults[key];
@@ -107,31 +101,74 @@ const getCurrentHub = () => {
   return hub;
 }
 
+const HubChooser = ({ setHub }) => {
+  const domain = location.hostname;
+  const queryDomain = new URLSearchParams(location.search).get('domain');
+  if (queryDomain !== null) {
+    if (domain !== 'localhost' && !domain.endsWith('.netlify.app')) {
+      // Don't allow queryDomain in prod, since it can be used to pretend
+      // one hub is another in phishing style attacks
+      return <Heading size="xl">
+        ?domain query parameter is only supported during development
+      </Heading>
+    } else {
+      if (hubsConfig.hubs[queryDomain]) {
+        // Can't setHub *during* a render, since setHub will trigger render
+        // of LoginPage. So we trigger it on next tick of the event loop.
+        setTimeout(() => setHub(getHub(queryDomain)), 0);
+      } else {
+        return <Heading size="xl">
+          Config for {queryDomain} not found
+        </Heading>
+      }
+    }
+  } else {
+    if (domain !== 'localhost' && !domain.endsWith('.netlify.app')) {
+      return <Heading size="xl">
+        The front page for this 2i2c hub has not been configured. You
+      can still try <Link href={pageProperties.loginUrl}>Logging in</Link>.
+    </Heading>
+    } else {
+      return <Select placeholder="Select JupyterHub to view its front page">
+        {Object.keys(hubsConfig.hubs).map(domain =>
+          <option value={domain} key={domain} onClick={() => {
+            setHub(getHub(domain))
+          }
+          }>{domain}</option>)
+        }
+      </Select>
+    }
+  }
+  return null;
+}
+
 const LoginPage = () => {
 
-  const hub = getCurrentHub()
-  return <Container maxW="container.md" marginTop={4}>
-    <Header logo={hub.logo} tagline={hub.tagline}
-      marginBottom={8} />
-    <LoginPanel marginBottom={12} />
-    <Flex direction="row"
-      paddingBottom={2}
-      marginBottom={16}
-      borderBottom="1px dotted" borderColor="gray.600">
-      <Welcome
-        flex={3} padding={4} paddingRight={12}
-        title={hub.welcome.title} subTitle={hub.welcome.subTitle} />
-      <Interfaces flex={2} interfaces={hub.interfaces} />
-    </Flex>
-    <Box>
-      {hub.faq.map(f =>
-        <FAQItem q={f.q} a={f.a} margin={4}
-          borderBottom="1px dotted" borderBottomColor="gray.400"
-          paddingBottom={4}
-        />
-      )}
-    </Box>
-  </Container>
+  const [hub, setHub] = useState(null);
+
+  return hub === null ? <HubChooser setHub={setHub} /> :
+    <Container maxW="container.md" marginTop={4}>
+      <Header logo={hub.logo} tagline={hub.tagline}
+        marginBottom={8} />
+      <LoginPanel marginBottom={12} />
+      <Flex direction="row"
+        paddingBottom={2}
+        marginBottom={16}
+        borderBottom="1px dotted" borderColor="gray.600">
+        <Welcome
+          flex={3} padding={4} paddingRight={12}
+          title={hub.welcome.title} subTitle={hub.welcome.subTitle} />
+        <Interfaces flex={2} interfaces={hub.interfaces} />
+      </Flex>
+      <Box>
+        {hub.faq.map(f =>
+          <FAQItem q={f.q} a={f.a} key={f.q} margin={4}
+            borderBottom="1px dotted" borderBottomColor="gray.400"
+            paddingBottom={4}
+          />
+        )}
+      </Box>
+    </Container>
 }
 
 document.addEventListener('DOMContentLoaded', function () {

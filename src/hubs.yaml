@@ -94,6 +94,7 @@ hubs:
     logo:
       img: https://pbs.twimg.com/profile_images/1102342372438925312/64xKJFPk.png
       url: https://www.colorado.edu/earthlab/
+    tagline: *JROSTFundingTagline
     welcome:
       title: |
         Welcome to the JupyterHub for [EarthLab](https://www.colorado.edu/earthlab)

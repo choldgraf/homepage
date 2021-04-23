@@ -1,0 +1,59 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+type: object
+additionalProperties: false
+types:
+  hub: &hub
+    description: |
+      Describes a hug front page
+    type: object
+    additionalProperties: false
+    properties:
+      interfaces:
+        type: array
+        description: |
+          List of interfaces available in this hub. Logos are shown on the frontpage.
+      messages:
+        type: array
+        description: |
+          List of messages shown in the hub front page. Markdown rendering supported
+      tagline:
+        type: string
+        description: |
+          Tagline shown under the logo of this hub. Markdown rendering is supported.
+      welcome:
+        additionalProperties: false
+        type: object
+        description: |
+          Welcome pane shown after login button. Usually indicates what hub this is.
+        properties:
+          title:
+            description: |
+              Bolded title heading to use in the welcome pane. Markdown is supported.
+            type: string
+          subTitle:
+            description: |
+              Smaller description to use in the welcome pane. Markdown is supported.
+            type: string
+      logo:
+        description: |
+          Logo to display prominently in the hub front page
+        type: object
+        additionalProperties: false
+        properties:
+          img:
+            description: |
+              URL pointing to logo
+            type: string
+          width:
+            description: |
+              Width to use when rendering logo. Any CSS width spec is supported.
+            type: string
+properties:
+  defaults: *hub
+  vars:
+    type: object
+    additionalProperties: true
+  hubs:
+    additionalProperties:
+      *hub
+    type: object

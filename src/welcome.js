@@ -1,11 +1,9 @@
 import { Box, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
 import MarkdownIt from "markdown-it";
 import React from "react";
-import jupyterLogo from "./logos/jupyter.svg";
-import rstudioLogo from "./logos/rstudio.svg";
+import { INTERFACES } from "./interfaces";
 
 const md = MarkdownIt();
-
 
 const Welcome = ({ title, subTitle, ...props }) => {
   return <Box {...props}>
@@ -17,23 +15,11 @@ const Welcome = ({ title, subTitle, ...props }) => {
 }
 
 const Interfaces = ({ interfaces, ...props }) => {
-  const interfaceDetails = {
-    rstudio: {
-      url: "https://rstudio.com",
-      logo: rstudioLogo,
-      width: 48
-    },
-    jupyter: {
-      url: "https://jupyter.org",
-      logo: jupyterLogo,
-      width: 56
-    }
-  }
   return <Flex
     flexDir="column" alignItems="end" justifyContent="center"
     {...props}>
     {interfaces.map(i => {
-      const iface = interfaceDetails[i];
+      const iface = INTERFACES[i];
       return <Link href={iface.url} key={i} marginBottom={4}>
         <Image width={iface.width} src={iface.logo} />
       </Link>
@@ -41,4 +27,4 @@ const Interfaces = ({ interfaces, ...props }) => {
   </Flex >
 }
 
-export { Welcome, Interfaces }
+export { Welcome, Interfaces, INTERFACES }

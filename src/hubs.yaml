@@ -2,6 +2,7 @@ defaults:
   interfaces:
   - jupyter
   - rstudio
+  - jupyterlab
   tagline: |
     Funded by [JROST & IOI](https://investinopen.org/blog/jrost-rapid-response-fund-awardees),
     run by [2i2c](https://2i2c.org)

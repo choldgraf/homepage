@@ -83,7 +83,7 @@ const LoginPage = () => {
     <Container maxW="container.md" marginTop={4}>
       <Header logo={hub.logo} tagline={hub.tagline}
         marginBottom={8} />
-      <LoginPanel marginBottom={12} />
+      <LoginPanel interfaces={hub.interfaces} marginBottom={12} />
       <Flex direction="row"
         paddingBottom={2}
         marginBottom={16}

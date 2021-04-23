@@ -5,17 +5,14 @@ import { render } from "react-dom";
 import { Center, Image, RadioGroup, Radio, Stack, ChakraProvider, Container, Heading, Text, Link, Box, Flex, Button, baseStyle, Select } from "@chakra-ui/react";
 import rstudioLogo from "./logos/rstudio.svg";
 import jupyterLogo from "./logos/jupyter.svg";
+import "./index.css";
 
 const md = MarkdownIt();
 const pageProperties = window.pageProperties;
 
-const FAQItem = ({ q, a, ...props }) => {
-  return <Box {...props}>
-    <Heading
-      fontSize="lg" marginBottom={2}
-      dangerouslySetInnerHTML={{ __html: md.render(q) }} />
-    <Text dangerouslySetInnerHTML={{ __html: md.render(a) }} />
-  </Box>
+const Message = ({ markdown, ...props }) => {
+  return <Box {...props} className="message"
+    dangerouslySetInnerHTML={{ __html: md.render(markdown) }} />
 }
 
 const Welcome = ({ title, subTitle, ...props }) => {
@@ -161,8 +158,8 @@ const LoginPage = () => {
         <Interfaces flex={2} interfaces={hub.interfaces} />
       </Flex>
       <Box>
-        {hub.faq.map(f =>
-          <FAQItem q={f.q} a={f.a} key={f.q} margin={4}
+        {hub.messages.map(m =>
+          <Message markdown={m} key={m} margin={4}
             borderBottom="1px dotted" borderBottomColor="gray.400"
             paddingBottom={4}
           />

@@ -6,9 +6,7 @@ defaults:
   tagline: |
     Funded by [JROST & IOI](https://investinopen.org/blog/jrost-rapid-response-fund-awardees),
     run by [2i2c](https://2i2c.org)
-  logo:
-    img: https://2i2c.org/media/logo.png
-    width: 480px
+  logo: https://2i2c.org/media/logo.png
   messages:
   - |
     #### Where can I learn more?
@@ -64,34 +62,26 @@ hubs:
         Welcome to the 2i2c staging Dask JupyterHub
       subTitle: *2i2cSubTitle
   justiceinnovationlab.pilot.2i2c.cloud:
-    logo: 
-      img: https://images.squarespace-cdn.com/content/5ee35ddb35affc21b29c0fd6/1596634079158-KLDENW5BSW2HQW4ZO0EH/JIL-Logo-Digital.png?format=1500w&content-type=image%2Fpng
-      width: 320px
+    logo: https://images.squarespace-cdn.com/content/5ee35ddb35affc21b29c0fd6/1596634079158-KLDENW5BSW2HQW4ZO0EH/JIL-Logo-Digital.png?format=1500w&content-type=image%2Fpng
     welcome:
       title: |
         Welcome to the [Justice Innovation Lab]( https://www.justiceinnovationlab.org/)
         JupyterHub
       subTitle: *2i2cSubTitle
   wur.pilot.2i2c.cloud:
-    logo:
-      img: https://www.wur.nl/upload/58340fb4-e33a-4d0b-af17-8d596fa93663_WUR_RGB_standard.png
-      width: 320px
+    logo: https://www.wur.nl/upload/58340fb4-e33a-4d0b-af17-8d596fa93663_WUR_RGB_standard.png
     welcome:
       title: |
         Welcome to the JupyterHub for [Wageningen University and Research]( https://www.wur.nl/en/wageningen-university.htm)
       subTitle: *2i2cSubTitle
   catalyst-cooperative.pilot.2i2c.cloud:
-    logo:
-      img: https://catalyst.coop/files/2018/06/SimpleSquareWalking.png
-      width: 320px
+    logo: https://catalyst.coop/files/2018/06/SimpleSquareWalking.png
     welcome:
       title: |
         Welcome to the JupyterHub for [Catalyst Cooperative](https://catalyst.coop)
       subTitle: *2i2cSubTitle
   earthlab.pilot.2i2c.cloud:
-    logo:
-      img: https://pbs.twimg.com/profile_images/1102342372438925312/64xKJFPk.png
-      width: 320px
+    logo: https://pbs.twimg.com/profile_images/1102342372438925312/64xKJFPk.png
     welcome:
       title: |
         Welcome to the JupyterHub for [EarthLab](https://www.colorado.edu/earthlab)
@@ -103,90 +93,79 @@ hubs:
       subTitle: *2i2cSubTitle
   spelman.cloudbank.2i2c.cloud:
     tagline: *cloudbankTagline
-    logo:
-      img: https://www.spelman.edu/images/communications/splogotagblk.png
-      width: 320px
+    logo: https://www.spelman.edu/images/communications/splogotagblk.png
     welcome:
       title: |
         Welcome to the JupyterHub for [Spelman College](https://www.spelman.edu)
       subTitle: *2i2cSubTitle
   ccsf.cloudbank.2i2c.cloud:
     tagline: *cloudbankTagline
-    logo:
-      img: https://www.ccsf.edu/sites/default/files/inline-images/asset-th-logo-black.png
-      width: 320px
+    logo: https://www.ccsf.edu/sites/default/files/inline-images/asset-th-logo-black.png
+      
     welcome:
       title: |
         Welcome to the JupyterHub for [City College SF](https://www.ccsf.edu)
       subTitle: *2i2cSubTitle
   elcamino.cloudbank.2i2c.cloud:
     tagline: *cloudbankTagline
-    logo:
-      img: https://www.elcamino.edu/_resources/images/logo.png
-      width: 320px
+    logo: https://www.elcamino.edu/_resources/images/logo.png
+      
     welcome:
       title: |
         Welcome to the JupyterHub for [El Camino College](https://www.elcamino.edu)
       subTitle: *2i2cSubTitle
   howard.cloudbank.2i2c.cloud:
     tagline: *cloudbankTagline
-    logo:
-      img: https://upload.wikimedia.org/wikipedia/en/a/a3/Howard_University_seal.svg
-      width: 320px
+    logo: https://upload.wikimedia.org/wikipedia/en/a/a3/Howard_University_seal.svg
+      
     welcome:
       title: |
         Welcome to the JupyterHub for [Howard University](https://home.howard.edu)
       subTitle: *2i2cSubTitle
   skyline.cloudbank.2i2c.cloud:
     tagline: *cloudbankTagline
-    logo:
-      img: http://skylinecollege.edu/mcpr/images/logos/png/skyline_logo_horiz_cmyk.png
-      width: 320px
+    logo: http://skylinecollege.edu/mcpr/images/logos/png/skyline_logo_horiz_cmyk.png
+      
     welcome:
       title: |
         Welcome to the JupyterHub for [Skyline College](https://www.skylinecollege.edu)
       subTitle: *2i2cSubTitle
   lassen.cloudbank.2i2c.cloud:
     tagline: *cloudbankTagline
-    logo:
-      img: https://www.lassencollege.edu/about/governance/graphic-standards/Documents/District-Logo-Standards/LCC-Athletic-Logo-on-blk.jpg
-      width: 320px
+    logo: https://www.lassencollege.edu/about/governance/graphic-standards/Documents/District-Logo-Standards/LCC-Athletic-Logo-on-blk.jpg
+      
     welcome:
       title: |
         Welcome to the JupyterHub for [Lassen College](https://www.lassencollege.edu)
       subTitle: *2i2cSubTitle
   clovis.cloudbank.2i2c.cloud:
     tagline: *cloudbankTagline
-    logo:
-      img: https://www.scccd.edu/_files/images/clovis-logo-bubble-6.png
-      width: 320px
+    logo: https://www.scccd.edu/_files/images/clovis-logo-bubble-6.png
+      
     welcome:
       title: |
         Welcome to the JupyterHub for [Clovis College](https://www.cloviscollege.edu)
       subTitle: *2i2cSubTitle
   sbcc.cloudbank.2i2c.cloud:
     tagline: *cloudbankTagline
-    logo:
-      img: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Santa_Barbara_City_College.svg/1200px-Santa_Barbara_City_College.svg.png
-      width: 320px
+    logo: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Santa_Barbara_City_College.svg/1200px-Santa_Barbara_City_College.svg.png
+      
     welcome:
       title: |
         Welcome to the JupyterHub for [Santa Barbara City College](https://www.sbcc.edu)
       subTitle: *2i2cSubTitle
   mills.cloudbank.2i2c.cloud: &millsCollegeHub
     tagline: *cloudbankTagline
-    logo:
-      img: https://upload.wikimedia.org/wikipedia/commons/4/40/Mills_College_wordmark.svg
-      width: 320px
+    logo: https://upload.wikimedia.org/wikipedia/commons/4/40/Mills_College_wordmark.svg
+      
     welcome:
       title: |
         Welcome to the JupyterHub for [Mills College](https://www.mills.edu)
       subTitle: *2i2cSubTitle
   datahub.mills.edu: *millsCollegeHub
   paleohack2021.hackathon.2i2c.cloud:
-    logo:
-      img: https://raw.githubusercontent.com/LinkedEarth/Logos/master/pyleoclim_logo_full_white.png
-      width: 320px
+    logo: https://raw.githubusercontent.com/LinkedEarth/Logos/master/pyleoclim_logo_full_white.png
+      
     welcome:
       title: |
         Welcome to the JupyterHub for [PaleoHack 2021](https://linkedearth.github.io/paleoHackathon/)

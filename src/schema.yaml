@@ -36,18 +36,8 @@ types:
             type: string
       logo:
         description: |
-          Logo to display prominently in the hub front page
-        type: object
-        additionalProperties: false
-        properties:
-          img:
-            description: |
-              URL pointing to logo
-            type: string
-          width:
-            description: |
-              Width to use when rendering logo. Any CSS width spec is supported.
-            type: string
+          URL pointing to logo to display prominently in the hub front page
+        type: string
 properties:
   defaults: *hub
   vars:

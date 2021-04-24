@@ -1,0 +1,195 @@
+defaults:
+  interfaces:
+  - jupyter
+  - rstudio
+  tagline: |
+    Funded by [JROST & IOI](https://investinopen.org/blog/jrost-rapid-response-fund-awardees),
+    run by [2i2c](https://2i2c.org)
+  logo:
+    img: https://2i2c.org/media/logo.png
+    width: 480px
+  messages:
+  - |
+    #### Where can I learn more?
+
+    The [Pilot Hubs Documentation](https://pilot.2i2c.org) has all of the
+    information that you need to use the hub, as well as information about
+    the deployment technology.
+
+  - |
+    #### What is a Jupyter Notebook?
+
+    [Jupyter Notebook](https://jupyter.org) is an open-source web
+    application that allows you to create and share documents that contain
+    live code, equations, visualizations and narrative text. Uses include:
+    data cleaning and transformation, numerical simulation, statistical
+    modeling, data visualization, machine learning, and much more.
+
+  - |
+    #### What is JupyterHub?
+    
+    [JupyterHub](https://github.com/jupyterhub/jupyterhub) brings
+    the power of notebooks to groups of users. It gives users access to
+    computational environments and resources without burdening the users with
+    installation and maintenance tasks. Users - including students,
+    researchers, and data scientists - can get their work done in their own
+    workspaces on shared resources which can be managed efficiently by system
+    administrators.
+
+  - |
+    #### Who can use this service?
+
+    This JupyterHub service is open to anyone that a hub administrator has approved.
+    Generally this means instructors and students. As this
+    is a proof-of-concept service, students should ensure they are backing up
+    their notebooks regularly if they are using this service for course
+    activities.
+vars:
+  2i2cSubTitle: &2i2cSubTitle |
+      This is a pilot service running on open source infrastructure. See the
+      [2i2c Pilot documentation](https://pilot.2i2c.org) for usage and
+      deployment information.
+  cloudbankTagline: &cloudbankTagline |
+    Funded & operated by [CloudBank](https://cloudbank.org), designed by [2i2c](https://2i2c.org)
+hubs:
+  staging.pilot.2i2c.cloud:
+    welcome:
+      title: |
+        Welcome to the 2i2c staging JupyterHub
+      subTitle: *2i2cSubTitle
+  dask-staging.pilot.2i2c.cloud:
+    welcome:
+      title: |
+        Welcome to the 2i2c staging Dask JupyterHub
+      subTitle: *2i2cSubTitle
+  justiceinnovationlab.pilot.2i2c.cloud:
+    logo: 
+      img: https://images.squarespace-cdn.com/content/5ee35ddb35affc21b29c0fd6/1596634079158-KLDENW5BSW2HQW4ZO0EH/JIL-Logo-Digital.png?format=1500w&content-type=image%2Fpng
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the [Justice Innovation Lab]( https://www.justiceinnovationlab.org/)
+        JupyterHub
+      subTitle: *2i2cSubTitle
+  wur.pilot.2i2c.cloud:
+    logo:
+      img: https://www.wur.nl/upload/58340fb4-e33a-4d0b-af17-8d596fa93663_WUR_RGB_standard.png
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [Wageningen University and Research]( https://www.wur.nl/en/wageningen-university.htm)
+      subTitle: *2i2cSubTitle
+  catalyst-cooperative.pilot.2i2c.cloud:
+    logo:
+      img: https://catalyst.coop/files/2018/06/SimpleSquareWalking.png
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [Catalyst Cooperative](https://catalyst.coop)
+      subTitle: *2i2cSubTitle
+  earthlab.pilot.2i2c.cloud:
+    logo:
+      img: https://pbs.twimg.com/profile_images/1102342372438925312/64xKJFPk.png
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [EarthLab](https://www.colorado.edu/earthlab)
+      subTitle: *2i2cSubTitle
+  swot-ocean-pangeo.pilot.2i2c.cloud:
+    welcome:
+      title: |
+        Welcome to the JupyterHub for the SWOT Ocean Pangeo Team
+      subTitle: *2i2cSubTitle
+  spelman.cloudbank.2i2c.cloud:
+    tagline: *cloudbankTagline
+    logo:
+      img: https://www.spelman.edu/images/communications/splogotagblk.png
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [Spelman College](https://www.spelman.edu)
+      subTitle: *2i2cSubTitle
+  ccsf.cloudbank.2i2c.cloud:
+    tagline: *cloudbankTagline
+    logo:
+      img: https://www.ccsf.edu/sites/default/files/inline-images/asset-th-logo-black.png
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [City College SF](https://www.ccsf.edu)
+      subTitle: *2i2cSubTitle
+  elcamino.cloudbank.2i2c.cloud:
+    tagline: *cloudbankTagline
+    logo:
+      img: https://www.elcamino.edu/_resources/images/logo.png
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [El Camino College](https://www.elcamino.edu)
+      subTitle: *2i2cSubTitle
+  howard.cloudbank.2i2c.cloud:
+    tagline: *cloudbankTagline
+    logo:
+      img: https://upload.wikimedia.org/wikipedia/en/a/a3/Howard_University_seal.svg
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [Howard University](https://home.howard.edu)
+      subTitle: *2i2cSubTitle
+  skyline.cloudbank.2i2c.cloud:
+    tagline: *cloudbankTagline
+    logo:
+      img: http://skylinecollege.edu/mcpr/images/logos/png/skyline_logo_horiz_cmyk.png
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [Skyline College](https://www.skylinecollege.edu)
+      subTitle: *2i2cSubTitle
+  lassen.cloudbank.2i2c.cloud:
+    tagline: *cloudbankTagline
+    logo:
+      img: https://www.lassencollege.edu/about/governance/graphic-standards/Documents/District-Logo-Standards/LCC-Athletic-Logo-on-blk.jpg
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [Lassen College](https://www.lassencollege.edu)
+      subTitle: *2i2cSubTitle
+  clovis.cloudbank.2i2c.cloud:
+    tagline: *cloudbankTagline
+    logo:
+      img: https://www.scccd.edu/_files/images/clovis-logo-bubble-6.png
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [Clovis College](https://www.cloviscollege.edu)
+      subTitle: *2i2cSubTitle
+  sbcc.cloudbank.2i2c.cloud:
+    tagline: *cloudbankTagline
+    logo:
+      img: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Santa_Barbara_City_College.svg/1200px-Santa_Barbara_City_College.svg.png
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [Santa Barbara City College](https://www.sbcc.edu)
+      subTitle: *2i2cSubTitle
+  mills.cloudbank.2i2c.cloud: &millsCollegeHub
+    tagline: *cloudbankTagline
+    logo:
+      img: https://upload.wikimedia.org/wikipedia/commons/4/40/Mills_College_wordmark.svg
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [Mills College](https://www.mills.edu)
+      subTitle: *2i2cSubTitle
+  datahub.mills.edu: *millsCollegeHub
+  paleohack2021.hackathon.2i2c.cloud:
+    logo:
+      img: https://raw.githubusercontent.com/LinkedEarth/Logos/master/pyleoclim_logo_full_white.png
+      width: 320px
+    welcome:
+      title: |
+        Welcome to the JupyterHub for [PaleoHack 2021](https://linkedearth.github.io/paleoHackathon/)
+      subTitle: |
+        Funded by [NSF Paleo Perspectives on Climate Change program](https://www.nsf.gov/funding/pgm_summ.jsp?pims_id=5750),
+        run by [2i2c](https://2i2c.org)
+

@@ -1,2 +1,5 @@
 jupyterhub
 oauthenticator
+ruamel.yaml
+jsonschema
+jinja2

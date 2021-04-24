@@ -1,0 +1,10 @@
+/**
+Styles for custom classes we define go here.
+
+Global styles (such as link styling), go under themes in index.js
+*/
+.message h4 {
+    font-size: var(--chakra-fontSizes-lg);
+    font-weight: var(--chakra-fontWeights-bold);
+    margin-bottom: var(--chakra-space-2);
+}

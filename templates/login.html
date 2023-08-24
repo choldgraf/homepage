@@ -23,9 +23,23 @@
         title='hub logo' />
     </a>
   <div id="operated-by">
+      {%- if custom.operated_by.custom_html %}
+      Operated by: {{ custom.operated_by.custom_html | safe }} |
+      {%- else %}
       Operated by: <a href="{{ custom.operated_by.url }}">{{ custom.operated_by.name }}</a> |
+      {%- endif %}
+
+      {%- if custom.funded_by.custom_html %}
+      Funded by: {{ custom.funded_by.custom_html | safe }} |
+      {%- else %}
       Funded by: <a href="{{ custom.funded_by.url }}">{{ custom.funded_by.name }}</a> |
+      {%- endif %}
+
+      {%- if custom.designed_by.custom_html %}
+      Designed by: {{ custom.designed_by.custom_html | safe }}
+      {%- else %}
       Designed by: <a href="{{ custom.designed_by.url }}">{{ custom.designed_by.name }}</a>
+      {%- endif %}
   </div>
   </div>
   <div class="login-container text-center">

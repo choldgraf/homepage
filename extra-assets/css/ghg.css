@@ -1,0 +1,40 @@
+body {
+  font-size: 16px;
+  font-family: "Inter",sans-serif;
+  text-transform: none;
+  font-style: normal;
+  font-variation-settings: 'pnum' 0;
+}
+
+nav {
+  background-color: #0B3D91;
+  height: 90px;
+  padding: 24px 32px;
+  
+}
+.navbar-brand-wrapper a {
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  font-size: 24px;
+  line-height: 1.5rem;
+  font-weight: 700;
+  -webkit-letter-spacing: -0.025em;
+  -moz-letter-spacing: -0.025em;
+  -ms-letter-spacing: -0.025em;
+  letter-spacing: -0.025em;
+  color: white;
+}
+#login-button {
+  background-color: #0B3D91;
+}
+
+.footer {
+  font-size: 12px;
+}

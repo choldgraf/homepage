@@ -1,13 +1,22 @@
 {% extends "templates/login.html" %}
-
-
-{% block nav_bar %}
-{% endblock %}
-
 {% block stylesheet %}
 {{ super() }}
 <link rel="stylesheet" href="{{ static_url('extra-assets/css/login.css') }}" type="text/css"/>
+{%- if custom.extra_css %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+  <link rel="stylesheet" href="{{ static_url('extra-assets/css/' + custom.extra_css) }}" type="text/css"/>
+{%- endif %}
 {% endblock %}
+
+{% block nav_bar %}
+<nav class="navbar navbar-light">
+    <div class="navbar-brand-wrapper">
+    <a  href="/"><svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M11.4074 22C11.4074 16.1499 16.1499 11.4074 22 11.4074V0C9.84973 0 0 9.84974 0 22C0 34.1503 9.84973 44 22 44V32.5722C27.8501 32.5722 32.5926 27.8298 32.5926 21.9796C32.5926 16.1295 27.8501 11.387 22 11.387V32.5926C16.1499 32.5926 11.4074 27.8501 11.4074 22Z" fill="#0098D7"></path></g></svg><span class="brand">U.S. Greenhouse Gas Center</span></a>
+  </div>
+</nav>
+{% endblock %}
+
+
 
 {% block script %}
 {{ super() }}
@@ -15,144 +24,80 @@
 {% endblock %}
 
 {% block main %}
+
 <div class="container login-header" id="home" data-authenticator-login-url="{{authenticator_login_url}}">
-  <div class="text-center">
-    <p class="hub-login-text">The 2i2c JupyterHub for <a href="{{ custom.org.url }}">{{ custom.org.name }}</a></p><br />
-    <a href="{{ custom.org.url }}">
-      <img src="{{ custom.org.logo_url }}" alt="{{ custom.org.name }} logo" class='hub-logo'
-        title='hub logo' />
-    </a>
-  <div id="operated-by">
-      {%- if custom.operated_by.custom_html %}
-      Operated by: {{ custom.operated_by.custom_html | safe }} |
-      {%- else %}
-      Operated by: <a href="{{ custom.operated_by.url }}">{{ custom.operated_by.name }}</a> |
-      {%- endif %}
-
-      {%- if custom.funded_by.custom_html %}
-      Funded by: {{ custom.funded_by.custom_html | safe }} |
-      {%- else %}
-      Funded by: <a href="{{ custom.funded_by.url }}">{{ custom.funded_by.name }}</a> |
-      {%- endif %}
-
-      {%- if custom.designed_by.custom_html %}
-      Designed by: {{ custom.designed_by.custom_html | safe }}
-      {%- else %}
-      Designed by: <a href="{{ custom.designed_by.url }}">{{ custom.designed_by.name }}</a>
-      {%- endif %}
-  </div>
-  </div>
-  <div class="login-container text-center">
-    {% if "interface_selector" in custom and custom["interface_selector"] and (not next or next == "%2Fhub%2F") %}
-    <form class="form-inline">
-      <div class="form-group interface-selector">
-        <label>After logging in, open: </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="tree"
-                 {% if "default_url" not in custom or custom["default_url"] == "/tree" %}
-                 checked
-                 {% endif %}
-                 >Jupyter Notebook
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="rstudio"
-                 {% if "default_url" in custom and custom["default_url"] == "/rstudio" %}
-                 checked
-                 {% endif %}
-                 >RStudio
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="lab"
-                 {% if "default_url" in custom and custom["default_url"] == "/lab" %}
-                 checked
-                 {% endif %}
-                 >JupyterLab
-        </label>
-      </div>
-    </form>
-    <a role="button" id="login-button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
-      Log in to start
-    </a>
-    {% else %}
-    <a role="button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
-      Log in to continue
-    </a>
-    {% endif %}
+  <div class="col-md-12 text-center">
+    <img src="{{static_url("extra-assets/images/logos/epa.svg") }}" alt='Jupyter' height="64" />
+    <img src="{{static_url("extra-assets/images/logos/nasa.png") }}" alt='Jupyter' height="64" />
+    <img src="{{static_url("extra-assets/images/logos/nist.png") }}" alt='Jupyter' height="64" />
+    <img src="{{static_url("extra-assets/images/logos/noaa.png") }}" alt='Jupyter' height="64" />
   </div>
 
-  <div class="col-md-8 col-md-offset-2 details">
-    <div class="col-md-6">
-      <big class="details-welcome lead">
+
+  <div class="col-md-6 card">
+    
+      <h1 class="details-welcome lead">
       Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> <strong>2i2c JupyterHub</strong>.
-      </big>
+      </h1>
       <br />
-      <br />
+
       This is a pilot service running on open source infrastructure.
       See <a href="https://2i2c.org/pilot">the 2i2c Pilot documentation</a> for usage and deployment information.</p>
+      <div id="operated-by">
+        {%- if custom.operated_by.custom_html %}
+        Operated by: {{ custom.operated_by.custom_html | safe }} 
+        {%- else %}
+        Operated by: <a href="{{ custom.operated_by.url }}">{{ custom.operated_by.name }}</a> 
+        {%- endif %}
     </div>
-    <div class="col-md-6 details-logos">
-      <div class="pull-right">
-        <a href="https://jupyter.org">
-          <img src="{{static_url("extra-assets/images/jupyter-logo.svg") }}" alt='Jupyter' height="64" />
-        </a>
-      </div>
-      <div class="pull-right">
-        <a href="https://rstudio.com">
-          <img src="{{static_url("extra-assets/images/rstudio-logo.svg") }}" alt='RStudio' height="64"/>
-        </a>
-      </div>
+    <div class="login-container text-center">
+      {% if "interface_selector" in custom and custom["interface_selector"] and (not next or next == "%2Fhub%2F") %}
+      <form class="form-inline">
+        <div class="form-group interface-selector">
+          <label>After logging in, open: </label>
+          <label class="radio-inline">
+            <input type="radio" name="interface" value="tree"
+                   {% if "default_url" not in custom or custom["default_url"] == "/tree" %}
+                   checked
+                   {% endif %}
+                   >Jupyter Notebook
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="interface" value="rstudio"
+                   {% if "default_url" in custom and custom["default_url"] == "/rstudio" %}
+                   checked
+                   {% endif %}
+                   >RStudio
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="interface" value="lab"
+                   {% if "default_url" in custom and custom["default_url"] == "/lab" %}
+                   checked
+                   {% endif %}
+                   >JupyterLab
+          </label>
+        </div>
+      </form>
+      <a role="button" id="login-button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
+        Log in to start
+      </a>
+      {% else %}
+      <a role="button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
+        Log in to continue
+      </a>
+      {% endif %}
     </div>
-
+  
+  </div>
+  <div class="col-md-6 card">
+    <div class="card-body">
+    Email us veda@uah.edu to requeast access.
+    </div>
   </div>
 
-  {% if custom.announcements is defined %}
-    <div class="col-md-8 col-md-offset-2 announcements" >
-      {% for announcement in custom.announcements %}
-      <div class="announcements-text">
-        {{ announcement | safe }}
-      </div>
-      {% endfor %}
-    </div>
-  {% endif %}
 
-  <div class="col-md-8 col-md-offset-2 questions">
-    <div>
-      <h4>Where can I learn more?</h4>
 
-      The <a href="https://2i2c.org/pilot">2i2c Pilot Hubs Documentation</a> has all of the information that you need to use the hub, as well as information about the deployment technology.
-    </div>
-    <div>
-      <h4>What is a Jupyter Notebook?</h4>
-
-      <a href="https://jupyter.org">Jupyter Notebook</a> is an open-source web application that allows you to create and
-      share documents that contain live code, equations, visualizations and narrative
-      text. Uses include: data cleaning and transformation, numerical simulation,
-      statistical modeling, data visualization, machine learning, and much more.
-
-    </div>
-
-    <div>
-      <h4>What is JupyterHub?</h4>
-      <a href="https://github.com/jupyterhub/jupyterhub">JupyterHub</a> brings
-      the power of notebooks to groups of users. It gives users access to
-      computational environments and resources without burdening the users with
-      installation and maintenance tasks. Users - including students,
-      researchers, and data scientists - can get their work done in their own
-      workspaces on shared resources which can be managed efficiently by system
-      administrators.
-    </div>
-
-    <div>
-      <h4>Who can use this service?</h4>
-
-      This JupyterHub service is open to anyone that a hub administrator has approved.
-      Generally this means instructors and students. As this
-      is a proof-of-concept service, students should ensure they are backing up
-      their notebooks regularly if they are using this service for course
-      activities.
-    </div>
-
-  <div class="footer">
+  <div class="footer col-md-12">
     <p>
       This service is run transparently from
       <a href="https://github.com/2i2c-org/pilot-hubs">

@@ -25,6 +25,7 @@ c.JupyterHub.template_vars = {
     'custom': {
         "interface_selector": True,
         "default_url": "/rstudio",
+        "extra_css": "ghg.css",
         'org': {
             'name': 'University of Foo',
             'logo_url': 'https://jupyter.org/assets/nav_logo.svg',
@@ -38,11 +39,11 @@ c.JupyterHub.template_vars = {
         'funded_by': {
             'name': '',
             'url': '',
-            'custom_html': 'Funding <i>Org</i>',
+            'custom_html': '',
         },
         'designed_by': {
-            'name': 'Funding Org',
-            'url': 'https://2i2c.org',
+            'name': 'Funding ',
+            'url': '',
             'custom_html': '',
         }
     }

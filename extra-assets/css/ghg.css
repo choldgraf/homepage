@@ -5,7 +5,9 @@ body {
   font-style: normal;
   font-variation-settings: 'pnum' 0;
 }
-
+a {
+  color: #0B3D91;
+}
 nav {
   background-color: #0B3D91;
   height: 90px;
@@ -34,7 +36,11 @@ nav {
 #login-button {
   background-color: #0B3D91;
 }
-
+h1.lead {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 40px;
+}
 .footer {
   font-size: 12px;
 }

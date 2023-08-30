@@ -1,9 +1,13 @@
 {% extends "templates/login.html" %}
+{% block title %}
+  GHG Center JupyterHub - Login
+{% endblock %}
 {% block stylesheet %}
 {{ super() }}
 <link rel="stylesheet" href="{{ static_url('extra-assets/css/login.css') }}" type="text/css"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:normal,bold&display=swap">
+<link rel="icon" sizes="any" href="https://www.earthdata.nasa.gov/dashboard/meta/favicon.ico">
 {%- if custom.extra_css %}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="{{ static_url('extra-assets/css/' + custom.extra_css) }}" type="text/css"/>
 {%- endif %}
 {% endblock %}
@@ -34,22 +38,24 @@
   </div>
 
 
-  <div class="col-md-6 card">
-    
-      <h1 class="details-welcome lead">
-      Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> <strong>2i2c JupyterHub</strong>.
+  <div class="col-md-8 col-md-push-2 card">
+      <h1 class="lead">
+      Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> 2i2c JupyterHub.
       </h1>
-      <br />
-
+      <p>
       This is a pilot service running on open source infrastructure.
-      See <a href="https://2i2c.org/pilot">the 2i2c Pilot documentation</a> for usage and deployment information.</p>
-      <div id="operated-by">
+      See <a href="https://2i2c.org/pilot">the 2i2c Pilot documentation</a> for usage and deployment information.
+      </p>
+      <p id="operated-by">
         {%- if custom.operated_by.custom_html %}
         Operated by: {{ custom.operated_by.custom_html | safe }} 
         {%- else %}
         Operated by: <a href="{{ custom.operated_by.url }}">{{ custom.operated_by.name }}</a> 
         {%- endif %}
-    </div>
+      </p>
+      <p>
+        Email us <a href="mailto:john@example.com">veda@uah.edu</a>  to requeast access.
+      </p>
     <div class="login-container text-center">
       {% if "interface_selector" in custom and custom["interface_selector"] and (not next or next == "%2Fhub%2F") %}
       <form class="form-inline">
@@ -89,13 +95,6 @@
     </div>
   
   </div>
-  <div class="col-md-6 card">
-    <div class="card-body">
-    Email us veda@uah.edu to requeast access.
-    </div>
-  </div>
-
-
 
   <div class="footer col-md-12">
     <p>

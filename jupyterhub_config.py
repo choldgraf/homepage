@@ -27,12 +27,12 @@ c.JupyterHub.template_vars = {
         "default_url": "/rstudio",
         "extra_css": "ghg.css",
         'org': {
-            'name': 'University of Foo',
+            'name': ' NASA Green House Gases Center',
             'logo_url': 'https://jupyter.org/assets/nav_logo.svg',
-            'url': 'https://jupyter.org',
+            'url': 'https://www.nasa.gov/emd/ghg',
         },
         'operated_by': {
-            'name': 'Operating Org',
+            'name': '2i2c',
             'url': 'https://2i2c.org',
             'custom_html': '',
         },

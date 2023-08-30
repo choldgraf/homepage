@@ -23,6 +23,10 @@ nav {
   gap: 1rem;
 }
 
+.navbar-brand-wrapper a img {
+  width: 50px;
+}
+
 .brand {
   font-size: 24px;
   line-height: 1.5rem;

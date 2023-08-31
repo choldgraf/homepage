@@ -10,8 +10,7 @@ a {
 }
 nav {
   background-color: #0B3D91;
-  height: 90px;
-  padding: 24px 32px;
+  padding: 18px 24px;
   
 }
 .navbar-brand-wrapper a {
@@ -20,7 +19,6 @@ nav {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 1rem;
 }
 
 .navbar-brand-wrapper a img {
@@ -29,14 +27,32 @@ nav {
 
 .brand {
   font-size: 24px;
-  line-height: 1.5rem;
   font-weight: 700;
-  -webkit-letter-spacing: -0.025em;
-  -moz-letter-spacing: -0.025em;
-  -ms-letter-spacing: -0.025em;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.4px;
   color: white;
 }
+
+.brand-logo {
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  padding: 0.5rem 0.875rem;
+  background: #FFFFFF;
+  color: #082a64;
+  padding: 8px 14px;
+  margin-right: 14px;
+}
+
+.brand-logo span {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.4px;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
 #login-button {
   background-color: #0B3D91;
 }

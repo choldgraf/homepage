@@ -26,22 +26,22 @@ c.JupyterHub.template_vars = {
         "interface_selector": True,
         "default_url": "/rstudio",
         'org': {
-            'name': 'University of Foo',
-            'logo_url': 'https://jupyter.org/assets/nav_logo.svg',
-            'url': 'https://jupyter.org',
+            'name': 'VICTOR',
+            'logo_url': 'https://i.imgur.com/D2vXQ5k.png',
+            'url': 'https://victor.ldeo.columbia.edu',
         },
         'operated_by': {
-            'name': 'Operating Org',
+            'name': '2i2c',
             'url': 'https://2i2c.org',
             'custom_html': '',
         },
         'funded_by': {
-            'name': '',
-            'url': '',
+            'name': 'National Science Foundation',
+            'url': 'https://people.climate.columbia.edu/projects/sponsor/National%20Science%20Foundation',
             'custom_html': 'Funding <i>Org</i>',
         },
         'designed_by': {
-            'name': 'Funding Org',
+            'name': '2i2c',
             'url': 'https://2i2c.org',
             'custom_html': '',
         }

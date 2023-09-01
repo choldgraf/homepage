@@ -19,11 +19,9 @@ nav {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  text-decoration: none;
 }
 
-.navbar-brand-wrapper a img {
-  width: 50px;
-}
 
 .brand {
   font-size: 24px;

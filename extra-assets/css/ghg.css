@@ -53,7 +53,9 @@ nav {
 
 #login-button {
   background-color: #0B3D91;
+  border:none;
 }
+
 h1.lead {
   font-size: 24px;
   font-weight: 600;

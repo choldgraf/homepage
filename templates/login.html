@@ -41,19 +41,8 @@
 
   <div class="col-md-8 col-md-push-2 card">
       <h1 class="lead">
-      Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> 2i2c JupyterHub.
+      Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> JupyterHub.
       </h1>
-      <p>
-      This is a pilot service running on open source infrastructure.
-      See <a href="https://2i2c.org/pilot">the 2i2c Pilot documentation</a> for usage and deployment information.
-      </p>
-      <p id="operated-by">
-        {%- if custom.operated_by.custom_html %}
-        Operated by: {{ custom.operated_by.custom_html | safe }} 
-        {%- else %}
-        Operated by: <a href="{{ custom.operated_by.url }}">{{ custom.operated_by.name }}</a> 
-        {%- endif %}
-      </p>
       <p>
         New user? Please see our documentation about <a href="https://us-ghg-center.github.io/ghgc-docs/services/jupyterhub.html">how to request access</a>.
       </p>

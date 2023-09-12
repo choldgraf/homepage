@@ -10,8 +10,7 @@ a {
 }
 nav {
   background-color: #0B3D91;
-  padding: 18px 24px;
-  
+  padding: 8px 24px 14px 24px;
 }
 .navbar-brand-wrapper a {
   display: flex;
@@ -28,6 +27,7 @@ nav {
   font-weight: 700;
   letter-spacing: -0.4px;
   color: white;
+  padding-top: 12px;
 }
 
 .brand-logo {
@@ -35,10 +35,6 @@ nav {
   -webkit-flex-flow: column;
   -ms-flex-flow: column;
   flex-flow: column;
-  padding: 0.5rem 0.875rem;
-  background: #FFFFFF;
-  color: #082a64;
-  padding: 8px 14px;
   margin-right: 14px;
 }
 

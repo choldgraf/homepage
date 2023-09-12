@@ -10,7 +10,7 @@ a {
 }
 nav {
   background-color: #0B3D91;
-  padding: 10px 24px;
+  padding: 8px 24px 14px 24px;
 }
 .navbar-brand-wrapper a {
   display: flex;

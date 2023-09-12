@@ -13,7 +13,7 @@
 {% block nav_bar %}
 <nav class="navbar navbar-light">
     <div class="navbar-brand-wrapper">
-    <a  href="/">
+    <a href="https://ghg.center" target="_blank" rel="noopener">
       <div class="brand-logo">
         <img src="https://raw.githubusercontent.com/US-GHG-Center/ghgc-docs/main/logo/ghgc-logo-dark.svg" width="96px"/>
       </div>
@@ -34,10 +34,10 @@
 
 <div class="container login-header" id="home" data-authenticator-login-url="{{authenticator_login_url}}">
   <div class="logos col-md-12 text-center">
-    <img src="{{static_url("extra-assets/images/logos/epa.svg") }}" alt='epa logo' height="96" />
-    <img src="{{static_url("extra-assets/images/logos/nasa.png") }}" alt='nasa logo' height="96" />
-    <img src="{{static_url("extra-assets/images/logos/nist.png") }}" alt='nist logo' height="96" />
-    <img src="{{static_url("extra-assets/images/logos/noaa.png") }}" alt='noaa logo' height="96" />
+    <img src="{{static_url("extra-assets/images/logos/epa.svg") }}" alt='EPA logo' height="96" />
+    <img src="{{static_url("extra-assets/images/logos/nasa.png") }}" alt='NASA logo' height="96" />
+    <img src="{{static_url("extra-assets/images/logos/nist.png") }}" alt='NIST logo' height="96" />
+    <img src="{{static_url("extra-assets/images/logos/noaa.png") }}" alt='NOAA logo' height="96" />
   </div>
 
 
@@ -88,12 +88,16 @@
   
   </div>
 
-  <div class="footer col-md-12">
+    <div class="footer col-md-12">
     <p>
       This service is run transparently from
-      <a href="https://github.com/2i2c-org/pilot-hubs">
-        github.com/2i2c-org/pilot-hubs
+      <a href="https://github.com/2i2c-org/infrastructure">
+        github.com/2i2c-org/infrastructure
+      </a> by
+      <a href="https://2i2c.org">
+        2i2c.org
       </a>
+
     </p>
     <p>
       Built with
@@ -103,6 +107,9 @@
       <a href="https://github.com/conda-forge/miniforge">Miniforge</a> and
       many parts of the <a href="https://jupyter.org">Jupyter Project</a>
       </p>
+      <a href="https://2i2c.org">
+        <img src="https://2i2c.org/media/logo.svg" height="28">
+      </a>
   </div>
 </div>
 {% endblock %}

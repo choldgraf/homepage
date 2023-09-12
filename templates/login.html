@@ -14,7 +14,9 @@
 <nav class="navbar navbar-light">
     <div class="navbar-brand-wrapper">
     <a  href="/">
-      <div class="brand-logo"><span>U.S.</span><span>GHG</span><span>Center</span></div>
+      <div class="brand-logo">
+        <img src="https://raw.githubusercontent.com/US-GHG-Center/ghgc-docs/main/logo/ghgc-logo-dark.svg" width="96px"/>
+      </div>
       <span class="brand">U.S. Greenhouse Gas Center</span>
     </a>
   </div>
@@ -31,11 +33,11 @@
 {% block main %}
 
 <div class="container login-header" id="home" data-authenticator-login-url="{{authenticator_login_url}}">
-  <div class="col-md-12 text-center">
-    <img src="{{static_url("extra-assets/images/logos/epa.svg") }}" alt='Jupyter' height="64" />
-    <img src="{{static_url("extra-assets/images/logos/nasa.png") }}" alt='Jupyter' height="64" />
-    <img src="{{static_url("extra-assets/images/logos/nist.png") }}" alt='Jupyter' height="64" />
-    <img src="{{static_url("extra-assets/images/logos/noaa.png") }}" alt='Jupyter' height="64" />
+  <div class="logos col-md-12 text-center">
+    <img src="{{static_url("extra-assets/images/logos/epa.svg") }}" alt='epa logo' height="96" />
+    <img src="{{static_url("extra-assets/images/logos/nasa.png") }}" alt='nasa logo' height="96" />
+    <img src="{{static_url("extra-assets/images/logos/nist.png") }}" alt='nist logo' height="96" />
+    <img src="{{static_url("extra-assets/images/logos/noaa.png") }}" alt='noaa logo' height="96" />
   </div>
 
 
@@ -43,8 +45,8 @@
       <h1 class="lead">
       Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> JupyterHub.
       </h1>
-      <p>
-        New user? Please see our documentation about <a href="https://us-ghg-center.github.io/ghgc-docs/services/jupyterhub.html">how to request access</a>.
+      <p class="text-center">
+        <span id="new-user"> New user? </span> Please see our documentation about <a href="https://us-ghg-center.github.io/ghgc-docs/services/jupyterhub.html">how to request access</a>.
       </p>
     <div class="login-container text-center">
       {% if "interface_selector" in custom and custom["interface_selector"] and (not next or next == "%2Fhub%2F") %}

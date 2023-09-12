@@ -19,6 +19,12 @@
     font-weight: bold;
 }
 
+#new-user {
+    font-size: 24px;
+    text-align: center;
+    color: #DF6C64;
+}
+
 .details {
     margin-top: 32px;
 }
@@ -78,4 +84,8 @@ p.hub-login-text {
 
 div.login-header img.hub-logo {
     width: 40%;
+}
+
+.logos {
+    padding: 64px;
 }

@@ -30,6 +30,30 @@
 
 {% block main %}
 
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        This US GHG Center Jupyter Hub Environment is provided to authorized users as an environment to perform cloud analyses and to access data from the center data holdings. Users are advised to review the documentation associated with any data they use. Access dataset documentation via the Data Catalog of the US GHG Center.
+      </div>
+      <div class="modal-footer">
+        <div class="container-fluid">
+          <div class="row">
+          <div class="col-md-5" style="text-align: left;">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="modalCheckBox" checked>
+              <label class="form-check-label" for="modalCheckBox" style="font-weight: 300;">Don't show this again</label>
+            </div>
+          </div>
+          <div class="col-md-7"><button type="button" class="btn btn-primary" data-dismiss="modal">Close</button></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container login-header" id="home" data-authenticator-login-url="{{authenticator_login_url}}">
   <div class="logos col-md-12 text-center">
     <img src="{{static_url("extra-assets/images/logos/epa.svg") }}" alt='EPA logo' height="96" />

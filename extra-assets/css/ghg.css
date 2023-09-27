@@ -6,10 +6,14 @@ body {
   font-variation-settings: 'pnum' 0;
 }
 a {
-  color: #0B3D91;
+  color: #1565EF;
+}
+a:hover {
+  text-decoration: underline;
+  color: #1565EF;
 }
 nav {
-  background-color: #0B3D91;
+  background-color: #082a64;
   padding: 8px 24px 14px 24px;
 }
 .navbar-brand-wrapper a {

@@ -50,7 +50,6 @@ nav {
   line-height: 18px;
   text-decoration: none;
 }
-
 #login-button {
   background-color: #0B3D91;
   border:none;
@@ -63,4 +62,14 @@ h1.lead {
 }
 .footer {
   font-size: 12px;
+}
+
+/*bootstrap override */
+
+button.btn-primary {
+  background-color: #0B3D91;
+}
+
+.modal-footer {
+  border: none;
 }

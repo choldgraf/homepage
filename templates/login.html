@@ -71,41 +71,9 @@
         <span id="new-user"> New user? </span> Please see our documentation about <a href="https://us-ghg-center.github.io/ghgc-docs/services/jupyterhub.html">how to request access</a>.
       </p>
     <div class="login-container text-center">
-      {% if "interface_selector" in custom and custom["interface_selector"] and (not next or next == "%2Fhub%2F") %}
-      <form class="form-inline">
-        <div class="form-group interface-selector">
-          <label>After logging in, open: </label>
-          <label class="radio-inline">
-            <input type="radio" name="interface" value="tree"
-                   {% if "default_url" not in custom or custom["default_url"] == "/tree" %}
-                   checked
-                   {% endif %}
-                   >Jupyter Notebook
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="interface" value="rstudio"
-                   {% if "default_url" in custom and custom["default_url"] == "/rstudio" %}
-                   checked
-                   {% endif %}
-                   >RStudio
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="interface" value="lab"
-                   {% if "default_url" in custom and custom["default_url"] == "/lab" %}
-                   checked
-                   {% endif %}
-                   >JupyterLab
-          </label>
-        </div>
-      </form>
-      <a role="button" id="login-button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
-        Log in to start
-      </a>
-      {% else %}
       <a role="button" id="login-button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
         Log in to continue
       </a>
-      {% endif %}
     </div>
   
   </div>

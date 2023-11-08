@@ -49,15 +49,24 @@
         <label>Después de iniciar sesión, abrir: </label>
         <label class="radio-inline">
           <input type="radio" name="interface" value="tree"
-                 {% if "default_url" not in custom or custom["default_url"] == ">Jupyter Notebook
+                 {% if "default_url" not in custom or custom["default_url"] == "/tree" %}
+                 checked
+                 {% endif %}
+                 >Jupyter Notebook
         </label>
         <label class="radio-inline">
           <input type="radio" name="interface" value="rstudio"
-                 {% if "default_url" in custom and custom["default_url"] == ">RStudio
+                 {% if "default_url" in custom and custom["default_url"] == "/rstudio" %}
+                 checked
+                 {% endif %}
+                 >RStudio
         </label>
         <label class="radio-inline">
           <input type="radio" name="interface" value="lab"
-                 {% if "default_url" in custom and custom["default_url"] == ">JupyterLab
+                 {% if "default_url" in custom and custom["default_url"] == "/lab" %}
+                 checked
+                 {% endif %}
+                 >JupyterLab
         </label>
       </div>
     </form>
@@ -96,7 +105,7 @@
 
   </div>
 
-  
+  {% if custom.announcements is defined %}
     <div class="col-md-8 col-md-offset-2 announcements" >
       {% for announcement in custom.announcements %}
       <div class="announcements-text">

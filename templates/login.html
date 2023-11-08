@@ -43,7 +43,7 @@
   </div>
   </div>
   <div class="login-container text-center">
-    {% if "interface_selector" in custom and custom["interface_selector"] and (no next or next == "%2Fhub%2F") %}
+    {% if "interface_selector" in custom and custom["interface_selector"] and (not next or next == "%2Fhub%2F") %}
     <form class="form-inline">
       <div class="form-group interface-selector">
         <label>Después de iniciar sesión, abrir: </label>

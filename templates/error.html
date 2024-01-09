@@ -1,7 +1,7 @@
 {% extends "templates/error.html" %}
 
 {% block error_detail %}
-{% if status_code == 403 %}
+{% if status_code == 500 %}
 <style>
 	.info {
   		color: #fc8703;
@@ -17,13 +17,9 @@
 </style>
 <div class="error">
 	<div class="info">
-		<i class="fa fa-info-circle"></i>
-		Looks like you have <b>NOT</b> been added to the list of allowed users for this hub. Please contact the hub administrators.
-	</div>
-	<div class="text-center">
-		<a role="button" class='btn btn-jupyter' href='{{base_url}}/logout'>
-		Tap to try a different account
-		</a>
+	  <i class="fa fa-info-circle"></i>
+          We are investigating an issue that causes login failures for some users.
+          As a temporary workaround, please login to <a href="https://mail.utoronto.ca">mail.utoronto.ca</a> first, and then you should be able to login to the JupyterHub.
 	</div>
 </div>
 {% else %}

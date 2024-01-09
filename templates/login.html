@@ -1,19 +1,8 @@
-{% extends "templates/login.html" %}
-
-
-{% block nav_bar %}
-{% endblock %}
-
-{% block stylesheet %}
-{{ super() }}
-<link rel="stylesheet" href="{{ static_url('extra-assets/css/login.css') }}" type="text/css"/>
-{% endblock %}
-
-{% block script %}
-{{ super() }}
-<script src="{{ static_url('extra-assets/js/login.js') }}"></script>
-{% endblock %}
-
-{% block main %}
-Redirecting you appropriately...
-{% endblock %}
+<html>
+  <head>
+    <script src="{{ static_url('extra-assets/js/login.js') }}"></script>
+  </head>
+  <body>
+    Redirecting you appropriately...
+  </body>
+</html>

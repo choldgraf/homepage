@@ -1,6 +1,9 @@
+{# This template *intentionally* does not inherit from any other template, as we want to redirect the end user as soon
+   as possible. The logic for the redirection is in redirect.js, which is loaded in <head> in a blocking manner.
+  #}
 <html>
   <head>
-    <script src="{{ static_url('extra-assets/js/login.js') }}"></script>
+    <script src="{{ static_url('extra-assets/js/redirect.js') }}"></script>
   </head>
   <body>
     Redirecting you appropriately...

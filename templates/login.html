@@ -119,7 +119,11 @@
     <div>
       <h4>Where can I learn more?</h4>
 
-      The <a href="https://2i2c.org/pilot">2i2c Pilot Hubs Documentation</a> has all of the information that you need to use the hub, as well as information about the deployment technology.
+      {% if custom.learn_more is defined %}
+        {{ custom.learn_more | safe }}
+      {% else %}
+        The <a href="https://2i2c.org/pilot">2i2c Pilot Hubs Documentation</a> has all of the information that you need to use the hub, as well as information about the deployment technology.
+      {% endif %}
     </div>
     <div>
       <h4>What is a Jupyter Notebook?</h4>

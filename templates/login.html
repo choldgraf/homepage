@@ -15,13 +15,16 @@
 {% endblock %}
 
 {% block main %}
-<div class="container login-header" id="home" data-authenticator-login-url="{{authenticator_login_url}}">
+<div class="container login-header" id="home">
   <div class="text-center">
     <p class="hub-login-text">The 2i2c JupyterHub for <a href="{{ custom.org.url }}">{{ custom.org.name }}</a></p><br />
     <a href="{{ custom.org.url }}">
       <img src="{{ custom.org.logo_url }}" alt="{{ custom.org.name }} logo" class='hub-logo'
         title='hub logo' />
     </a>
+  {% block login %}
+  {{ super() }}
+  {% endblock %}
   <div id="operated-by">
       {%- if custom.operated_by.custom_html %}
       Operated by: {{ custom.operated_by.custom_html | safe }} |
@@ -41,43 +44,6 @@
       Designed by: <a href="{{ custom.designed_by.url }}">{{ custom.designed_by.name }}</a>
       {%- endif %}
   </div>
-  </div>
-  <div class="login-container text-center">
-    {% if "interface_selector" in custom and custom["interface_selector"] and (not next or next == "%2Fhub%2F") %}
-    <form class="form-inline">
-      <div class="form-group interface-selector">
-        <label>After logging in, open: </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="tree"
-                 {% if "default_url" not in custom or custom["default_url"] == "/tree" %}
-                 checked
-                 {% endif %}
-                 >Jupyter Notebook
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="rstudio"
-                 {% if "default_url" in custom and custom["default_url"] == "/rstudio" %}
-                 checked
-                 {% endif %}
-                 >RStudio
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="lab"
-                 {% if "default_url" in custom and custom["default_url"] == "/lab" %}
-                 checked
-                 {% endif %}
-                 >JupyterLab
-        </label>
-      </div>
-    </form>
-    <a role="button" id="login-button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
-      Log in to start
-    </a>
-    {% else %}
-    <a role="button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
-      Log in to continue
-    </a>
-    {% endif %}
   </div>
 
   <div class="col-md-8 col-md-offset-2 details">

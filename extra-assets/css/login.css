@@ -6,9 +6,11 @@
     margin-top: 32px;
 }
 
-#login-button {
-    margin-top: 32px;
+#login-main {
+    display: table;
+    height: 60vh;
 }
+
 #operated-by {
     margin-top: 8px;
     color: darkgrey;

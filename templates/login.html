@@ -1,6 +1,5 @@
 {% extends "templates/login.html" %}
 
-
 {% block nav_bar %}
 {% endblock %}
 
@@ -15,6 +14,12 @@
 {% endblock %}
 
 {% block main %}
+<style>
+  #login-main {
+    display: table;
+    height: 60vh;
+  }
+</style>
 <div class="container login-header" id="home">
   <div class="text-center">
     <p class="hub-login-text">The 2i2c JupyterHub for <a href="{{ custom.org.url }}">{{ custom.org.name }}</a></p><br />

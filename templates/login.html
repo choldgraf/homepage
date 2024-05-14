@@ -22,9 +22,6 @@
       <img src="{{ custom.org.logo_url }}" alt="{{ custom.org.name }} logo" class='hub-logo'
         title='hub logo' />
     </a>
-  {% block login %}
-  {{ super() }}
-  {% endblock %}
   <div id="operated-by">
       {%- if custom.operated_by.custom_html %}
       Operated by: {{ custom.operated_by.custom_html | safe }} |
@@ -44,6 +41,11 @@
       Designed by: <a href="{{ custom.designed_by.url }}">{{ custom.designed_by.name }}</a>
       {%- endif %}
   </div>
+  </div>
+  <div class="login-container text-center">
+    {% block login %}
+    {{ super() }}
+    {% endblock %}
   </div>
 
   <div class="col-md-8 col-md-offset-2 details">

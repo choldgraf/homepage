@@ -42,11 +42,10 @@
       {%- endif %}
   </div>
   </div>
-  <div class="login-container text-center">
-    {% block login %}
-    {{ super() }}
-    {% endblock %}
   </div>
+  {% block login %}
+  {{ super() }}
+  {% endblock %}
 
   <div class="col-md-8 col-md-offset-2 details">
     <div class="col-md-6">

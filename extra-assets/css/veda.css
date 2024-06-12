@@ -81,10 +81,10 @@ nav {
 }
 
 .doc {
-  padding: 15px;
+  padding: 8px 15px;
   color: white;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: rgba(27, 90, 126, 0.5);
   border: 0px;
   display: flex;

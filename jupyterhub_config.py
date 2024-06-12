@@ -42,12 +42,12 @@ c.JupyterHub.template_vars = {
         },
         "funded_by": {
             "name": "NASA",
-            "url": "",
+            "url": "https://www.earthdata.nasa.gov/esds",
             "custom_html": "",
         },
         "designed_by": {
             "name": "2i2c ",
-            "url": "",
+            "url": "https://2i2c.org",
             "custom_html": "",
         },
     }

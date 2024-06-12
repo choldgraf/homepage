@@ -25,24 +25,25 @@ c.JupyterHub.template_vars = {
     'custom': {
         "interface_selector": True,
         "default_url": "/rstudio",
+        "extra_css": "veda.css",
         'org': {
-            'name': 'University of Foo',
-            'logo_url': 'https://jupyter.org/assets/nav_logo.svg',
-            'url': 'https://jupyter.org',
+            'name': 'The Visualization, Exploration, and Data Analysis (VEDA)',
+            'logo_url': '/extra-assets/images/logos/nasa.png',
+            'url': 'https://www.earthdata.nasa.gov/esds/veda',
         },
         'operated_by': {
-            'name': 'Operating Org',
+            'name': '2i2c',
             'url': 'https://2i2c.org',
             'custom_html': '',
         },
         'funded_by': {
-            'name': '',
+            'name': 'NASA',
             'url': '',
-            'custom_html': 'Funding <i>Org</i>',
+            'custom_html': '',
         },
         'designed_by': {
-            'name': 'Funding Org',
-            'url': 'https://2i2c.org',
+            'name': '2i2c ',
+            'url': '',
             'custom_html': '',
         }
     }

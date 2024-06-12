@@ -1,22 +1,30 @@
 #home {
-    margin-top: 32px
+    margin-top: 16vh;
 }
 
 .login-container {
     margin-top: 32px;
-}
+    margin-bottom: 32px;
+    }
 
 #login-button {
-    margin-top: 32px;
+    margin-top: 10px;
+    margin-bottom:10px;
 }
 #operated-by {
     margin-top: 8px;
     color: darkgrey;
+    align-items: center;
+    text-align:center;
 }
 
 #operated-by a {
     color:grey;
     font-weight: bold;
+}
+
+#new-user {
+    font-weight: 600;
 }
 
 .details {
@@ -78,4 +86,9 @@ p.hub-login-text {
 
 div.login-header img.hub-logo {
     width: 40%;
+}
+
+.logos {
+    padding: 8px;
+    padding-top:20px;
 }

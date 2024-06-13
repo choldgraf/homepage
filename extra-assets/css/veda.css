@@ -1,0 +1,128 @@
+body {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  text-transform: none;
+  font-style: normal;
+  font-variation-settings: "pnum" 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  color: #1565ef;
+}
+#login-button:hover {
+  text-decoration: none;
+}
+nav {
+  background-color: #2276ac;
+  padding: 8px 24px 14px 24px;
+  width: 100%;
+}
+.navbar-brand-wrapper a {
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.docs {
+  margin-right: 18px;
+  align-self: center;
+}
+
+.beta {
+  background-color: #fff;
+  text-align: left;
+  color: rgb(34, 118, 172);
+  border-radius: 2px;
+  padding-left: 0.5ch;
+  padding-right: 0.5ch;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.brand {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+  color: white;
+}
+
+.brand-logo {
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-right: 5px;
+  margin-left: 16px;
+}
+
+.brand-logo span {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.4px;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.doc {
+  padding: 8px 15px;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: rgba(27, 90, 126, 0.5);
+  border: 0px;
+  display: flex;
+}
+
+.login-box {
+  text-align: center;
+  box-shadow: 2px 4px 20px rgba(0, 0, 0, 0);
+  border: 0px solid darkgray;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px auto;
+  width: 50%;
+}
+
+#login-button {
+  background-color: #2276ac;
+  border: none;
+  margin-bottom: 20px;
+}
+
+h1.lead {
+  font-size: 26px;
+  font-weight: 450;
+  margin-top: 30px;
+  color: #2c2c2c;
+  font-family: "Open Sans", sans-serif;
+}
+.footer {
+  font-size: 12px;
+}
+
+/*bootstrap override */
+
+button.btn-primary {
+  background-color: #2276ac;
+}
+
+.modal-footer {
+  border: none;
+}

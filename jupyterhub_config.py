@@ -3,6 +3,7 @@ jupyterhub_config purely used for testing changes to templates.
 
 See README.md for information on how to test this out.
 """
+
 import pathlib
 from oauthenticator.generic import GenericOAuthenticator
 from jupyterhub.spawner import SimpleLocalProcessSpawner
@@ -14,7 +15,7 @@ HERE = pathlib.Path(__file__).parent
 # This allows us to override any template present in upstream
 # jupyterhub (https://github.com/jupyterhub/jupyterhub/tree/main/share/jupyterhub/templates)
 # locally
-c.JupyterHub.template_paths = [str(HERE / 'templates')]
+c.JupyterHub.template_paths = [str(HERE / "templates")]
 
 # We use this so we can get a 'login' button, instead of a username / password
 # field.
@@ -22,28 +23,32 @@ c.JupyterHub.authenticator_class = GenericOAuthenticator
 
 # Variables that are passed through to templates!
 c.JupyterHub.template_vars = {
-    'custom': {
+    "custom": {
         "interface_selector": True,
         "default_url": "/rstudio",
-        'org': {
-            'name': 'University of Foo',
-            'logo_url': 'https://jupyter.org/assets/nav_logo.svg',
-            'url': 'https://jupyter.org',
+        "extra_css": "veda.css",
+        "docs": {
+            "home": "https://nasa-impact.github.io/veda-docs/",
+            "access_request": "https://nasa-impact.github.io/veda-docs/services/jupyterhub.html#getting-access-to-vedas-jupyterhub-environment",
         },
-        'operated_by': {
-            'name': 'Operating Org',
-            'url': 'https://2i2c.org',
-            'custom_html': '',
+        "org": {
+            "name": "The Visualization, Exploration, and Data Analysis (VEDA)",
+            "url": "https://www.earthdata.nasa.gov/esds/veda",
         },
-        'funded_by': {
-            'name': '',
-            'url': '',
-            'custom_html': 'Funding <i>Org</i>',
+        "operated_by": {
+            "name": "2i2c",
+            "url": "https://2i2c.org",
+            "custom_html": "",
         },
-        'designed_by': {
-            'name': 'Funding Org',
-            'url': 'https://2i2c.org',
-            'custom_html': '',
-        }
+        "funded_by": {
+            "name": "NASA",
+            "url": "https://www.earthdata.nasa.gov/esds",
+            "custom_html": "",
+        },
+        "designed_by": {
+            "name": "2i2c ",
+            "url": "https://2i2c.org",
+            "custom_html": "",
+        },
     }
 }

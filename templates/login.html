@@ -24,21 +24,21 @@
     </a>
   <div id="operated-by">
       {%- if custom.operated_by.custom_html %}
-      Operated by: {{ custom.operated_by.custom_html | safe }} |
+      Operación: {{ custom.operated_by.custom_html | safe }} |
       {%- else %}
-      Operated by: <a href="{{ custom.operated_by.url }}">{{ custom.operated_by.name }}</a> |
+      Operación: <a href="{{ custom.operated_by.url }}">{{ custom.operated_by.name }}</a> |
       {%- endif %}
 
       {%- if custom.funded_by.custom_html %}
-      Funded by: {{ custom.funded_by.custom_html | safe }} |
+      Financiamiento: {{ custom.funded_by.custom_html | safe }} |
       {%- else %}
-      Funded by: <a href="{{ custom.funded_by.url }}">{{ custom.funded_by.name }}</a> |
+      Financiamiento: <a href="{{ custom.funded_by.url }}">{{ custom.funded_by.name }}</a> |
       {%- endif %}
 
       {%- if custom.designed_by.custom_html %}
-      Designed by: {{ custom.designed_by.custom_html | safe }}
+      Diseño: {{ custom.designed_by.custom_html | safe }}
       {%- else %}
-      Designed by: <a href="{{ custom.designed_by.url }}">{{ custom.designed_by.name }}</a>
+      Diseño: <a href="{{ custom.designed_by.url }}">{{ custom.designed_by.name }}</a>
       {%- endif %}
   </div>
   </div>
@@ -75,7 +75,7 @@
     </a>
     {% else %}
     <a role="button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
-      Log in to continue
+      Log in para continuar
     </a>
     {% endif %}
   </div>
@@ -83,12 +83,25 @@
   <div class="col-md-8 col-md-offset-2 details">
     <div class="col-md-6">
       <big class="details-welcome lead">
-      Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> <strong>2i2c JupyterHub</strong>.
+        Bienvenido al <strong>JupyterHub-2i2c</strong> de <a href="{{ custom.org.url }}">{{ custom.org.name }}</a>
+        del evento Intercoonecta OceanHackWeek en español, Feb. 27 - Mar. 3, 2023.
+        <br />
+        El interfaz de JupyterLab inicialmente aparecerá en Inglés por defecto. Para cambiarlo al español, 
+        ver las <a href="https://github.com/Intercoonecta/Aula-invertida/blob/main/Intro-a-Jupyter/jupyter-tutorial.md#cambiar-el-interfaz-al-espa%C3%B1ol">instrucciones que hemos desarrollado</a>.
+        
+        <br />
+        (<strong>Welcome to the OceanHackWeek 2i2c JupyterHub! From February 13 through March 3, 2023,
+        this hub will prioritize support for an OceanHackWeek event taking place in Spanish, Feb. 27 - Mar. 3.
+        We will add more information about that event here, soon. If you are not participating in this 
+        event, please use this hub lightly.</strong>)
       </big>
       <br />
+      <br />      
+      Este servicio corre sobre infraestructura de código abierto. Para mayor información, consulte
+      la <a href="https://2i2c.org/pilot">documentación (en inglés)</a>.
       <br />
       This is a pilot service running on open source infrastructure.
-      See <a href="https://2i2c.org/pilot">the 2i2c Pilot documentation</a> for usage and deployment information.</p>
+      See <a href="https://2i2c.org/pilot">the 2i2c Pilot documentation</a> for usage and deployment information.
     </div>
     <div class="col-md-6 details-logos">
       <div class="pull-right">

@@ -1,8 +1,25 @@
-# Custom JupyterHub template for 2i2c pilot hubs
+# Custom JupyterHub templates for 2i2c hubs
 
-This repo contains html jinja2 templates for customising the appearance of JupyterHub. Each HTML file here will override the files in `https://github.com/jupyterhub/jupyterhub/tree/master/share/jupyter/hub/templates`.
+This repo contains html jinja2 templates for customizing the appearance of JupyterHub. Each HTML file here will override the files in `https://github.com/jupyterhub/jupyterhub/tree/master/share/jupyter/hub/templates`.
 
 Any changes made in this repository will be reflected in the JupyterHub within 5 minutes.
+
+## General, out of the box variations to the default homepage via existing branches
+
+In this repositories there are some branches that provide alternatives to the default 2i2c landing page, but without being specific to a certain community hub. These are:
+
+1. **The [username-and-password-homepage](https://github.com/2i2c-org/default-hub-homepage/tree/username-and-password-homepage) branch**
+
+   This branch allows username and password input fields instead of the regular login single button, along with providing specific info about and for each community.
+
+   This branch is useful for hubs that instead of an OAuth2 based authenticator want to use a username and password one.
+
+2. **The [no-homepage-subsections](https://github.com/2i2c-org/default-hub-homepage/tree/no-homepage-subsections) branch**
+
+   This branch removes all the sub-sections that follow the login button, including the interface choice.
+
+   This branch is useful for hubs that might serve a binderhub-style page right after login instead of the spawning regular UI. In this case, the sections after the login button are not that relevant and removing them makes expectations more clear.
+
 
 ## Local development
 
@@ -46,7 +63,7 @@ If you create a branch in this repository with a name that matches `<cluster-nam
 
 **Steps for testing changes on staging:**
 
-1. From the local branch where you have your changes commited, create a new branch called `2i2c-staging`:
+1. From the local branch where you have your changes committed, create a new branch called `2i2c-staging`:
 
    ```bash
    git checkout -b 2i2c-staging
@@ -57,10 +74,16 @@ If you create a branch in this repository with a name that matches `<cluster-nam
    ```bash
    git push <remote> 2i2c-staging
    ```
-3. It should take around 5min to see your changes on the staging hub at `https://staging.pilot.2i2c.cloud`.
 
-4. After you've checked that everything works, merge the `2i2c-staging` branch into master and the changes
-will be deployed to the other hubs too after around 5min.
+2. Go to the [infrastructure repository](https://github.com/2i2c-org/infrastructure) and update the 2i2c staging hub config to track this new branch (if not already).
+
+   Follow the example at https://infrastructure.2i2c.org/en/latest/howto/features/login-page.html about how to set the `jupyterhub.custom.homepage.gitRepoBranch` config.
+
+   Open a PR against that repo with the changes if any.
+
+3. It should take around 5min to see your changes on the staging hub at `https://staging.pilot.2i2c.cloud` after the PR against the infrastructure repository has been merged.
+
+4. After you've checked that everything works, merge the `2i2c-staging` branch into the main branch of this repository if you want the changes to be deployed to the other hubs too after around 5min.
 
 5. Delete the remote staging branch, either from the GitHub GUI, or using:
 

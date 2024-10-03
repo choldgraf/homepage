@@ -23,9 +23,23 @@
         title='hub logo' />
     </a>
   <div id="operated-by">
+      {%- if custom.operated_by.custom_html %}
+      Operación: {{ custom.operated_by.custom_html | safe }} |
+      {%- else %}
       Operación: <a href="{{ custom.operated_by.url }}">{{ custom.operated_by.name }}</a> |
+      {%- endif %}
+
+      {%- if custom.funded_by.custom_html %}
+      Financiamiento: {{ custom.funded_by.custom_html | safe }} |
+      {%- else %}
       Financiamiento: <a href="{{ custom.funded_by.url }}">{{ custom.funded_by.name }}</a> |
+      {%- endif %}
+
+      {%- if custom.designed_by.custom_html %}
+      Diseño: {{ custom.designed_by.custom_html | safe }}
+      {%- else %}
       Diseño: <a href="{{ custom.designed_by.url }}">{{ custom.designed_by.name }}</a>
+      {%- endif %}
   </div>
   </div>
   <div class="login-container text-center">
@@ -118,7 +132,11 @@
     <div>
       <h4>Where can I learn more?</h4>
 
-      The <a href="https://2i2c.org/pilot">2i2c Pilot Hubs Documentation</a> has all of the information that you need to use the hub, as well as information about the deployment technology.
+      {% if custom.learn_more is defined %}
+        {{ custom.learn_more | safe }}
+      {% else %}
+        The <a href="https://2i2c.org/pilot">2i2c Pilot Hubs Documentation</a> has all of the information that you need to use the hub, as well as information about the deployment technology.
+      {% endif %}
     </div>
     <div>
       <h4>What is a Jupyter Notebook?</h4>

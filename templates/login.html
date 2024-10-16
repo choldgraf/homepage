@@ -17,7 +17,7 @@
 {% block main %}
 <div class="container login-header" id="home" data-authenticator-login-url="{{authenticator_login_url}}">
   <div class="text-center">
-    <p class="hub-login-text">The 2i2c JupyterHub for <a href="{{ custom.org.url }}">{{ custom.org.name }}</a></p><br />
+    <p class="hub-login-text">El JupyterHub-2i2c para <a href="{{ custom.org.url }}">{{ custom.org.name }}</a></p><br />
     <a href="{{ custom.org.url }}">
       <img src="{{ custom.org.logo_url }}" alt="{{ custom.org.name }} logo" class='hub-logo'
         title='hub logo' />
@@ -83,41 +83,54 @@
   <div class="col-md-8 col-md-offset-2 details">
     <div class="col-md-6">
       <big class="details-welcome lead">
-        Bienvenido al <strong>JupyterHub-2i2c</strong> de <a href="{{ custom.org.url }}">{{ custom.org.name }}</a>
-        del programa Intercoonecta OceanHackWeek en español, Octubre-Noviembre 2024.
+        ¡Bienvenida/o al <strong>JupyterHub-2i2c</strong> de <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> 
+        para los eventos de Octubre-Noviembre 2024! Estos eventos son patrocinados
+        por <a href="https://intercoonecta.aecid.es/">AECID-Intercoonecta</a> y <a href="https://www.csic.es/es">CSIC</a>.
         <br />
-        Esta plataforma da acceso a entornos de <strong>Python utilizando JupyterLab</strong>strong> y de <strong>R utilizando RStudio</strong>.
-        El interfaz de JupyterLab inicialmente aparecerá en Inglés por defecto. Para cambiarlo al español, 
-        ver las <a href="https://github.com/Intercoonecta/Aula-invertida/blob/main/Intro-a-Jupyter/jupyter-tutorial.md#cambiar-el-interfaz-al-espa%C3%B1ol">instrucciones que hemos desarrollado</a>.
-        
-        <br />
-        (<strong>Welcome to the OceanHackWeek 2i2c JupyterHub! From October to November 2024,
-        this hub will prioritize support for two OceanHackWeek events taking place in Spanish, October 15-18 and November 25-29.
-        We will add more information about that event here, soon. If you are not participating in this 
-        event and still have access, please use this hub lightly.</strong>)
+        Esta plataforma da acceso a entornos de <strong>Python utilizando JupyterLab</strong> y de <strong>R utilizando RStudio</strong>.
+        El interfaz de JupyterLab inicialmente aparecerá en Inglés por defecto. Para cambiarlo al español, ver las 
+        <a href="https://github.com/Intercoonecta/Aula-invertida/blob/main/Intro-a-Jupyter/jupyter-tutorial.md#cambiar-el-interfaz-al-espa%C3%B1ol">instrucciones que hemos desarrollado</a>.        
       </big>
       <br />
       <br />      
+      <big>
+        El resto del año, este servicio es manejado por la iniciativa <a href="https://oceanhackweek.org">OceanHackWeek</a>. Agradecemos su colaboración.
+      </big>
+      <br />
+      <br />
       Este servicio corre sobre infraestructura de código abierto. Para mayor información, consulte
       la <a href="https://2i2c.org/pilot">documentación (en inglés)</a>.
-      <br />
-      This is a pilot service running on open source infrastructure.
-      See <a href="https://2i2c.org/pilot">the 2i2c Pilot documentation</a> for usage and deployment information.
     </div>
     <div class="col-md-6 details-logos">
-      <div class="pull-right">
-        <a href="https://jupyter.org">
-          <img src="{{static_url("extra-assets/images/jupyter-logo.svg") }}" alt='Jupyter' height="64" />
-        </a>
-      </div>
-      <div class="pull-right">
-        <a href="https://rstudio.com">
-          <img src="{{static_url("extra-assets/images/rstudio-logo.svg") }}" alt='RStudio' height="64"/>
-        </a>
-      </div>
+      <big class="details-welcome lead">
+        Welcome to the <strong>OceanHackWeek 2i2c JupyterHub!</strong> From October to November 2024,
+        this hub will prioritize support for two events by the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> group 
+        taking place, October 15-18 and November 25-29. 
+        This is a virtual program fully in Spanish serving participants from throughout Latin America.
+        <br>
+        <br>
+        <em>If you still have access through a previous <a href="https://oceanhackweek.org">OceanHackWeek</a> event and are not participating in this event, please use this hub lightly.</em> 
+      </big>
+      <br>
+      <br>      
+      This service runs on open source infrastructure.
+      See <a href="https://2i2c.org/pilot">the 2i2c Pilot documentation</a> for usage and deployment information.
     </div>
-
   </div>
+
+  <div class="login-container text-center">
+    <div>
+      <a href="https://jupyter.org/">
+        <img src="{{static_url("extra-assets/images/jupyter-logo.svg") }}" alt='Jupyter' height="55" />
+      </a>
+    </div>
+    <div>
+      <a href="https://rstudio.com/">
+        <img src="{{static_url("extra-assets/images/rstudio-logo.svg") }}" alt='RStudio' height="55"/>
+      </a>
+    </div>
+  </div>
+
 
   {% if custom.announcements is defined %}
     <div class="col-md-8 col-md-offset-2 announcements" >

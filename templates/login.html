@@ -44,30 +44,24 @@
   </div>
   <div class="login-container text-center">
     {% if "interface_selector" in custom and custom["interface_selector"] and (not next or next == "%2Fhub%2F") %}
-    <form class="form-inline">
-      <div class="form-group interface-selector">
-        <label>After logging in, open: </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="tree"
-                 {% if "default_url" not in custom or custom["default_url"] == "/tree" %}
-                 checked
-                 {% endif %}
-                 >Jupyter Notebook
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="rstudio"
-                 {% if "default_url" in custom and custom["default_url"] == "/rstudio" %}
-                 checked
-                 {% endif %}
-                 >RStudio
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="lab"
-                 {% if "default_url" in custom and custom["default_url"] == "/lab" %}
-                 checked
-                 {% endif %}
-                 >JupyterLab
-        </label>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">After logging in, open:</label>
+        <div class="form-check form-check-inline form-switch">
+          <input class="form-check-input" type="radio" name="interface" value="tree"
+                  {% if "default_url" not in custom or custom["default_url"] == "/tree" %}checked{% endif %} />
+          <label class="form-check-label">Jupyter Notebook</label>
+        </div>
+        <div class="form-check form-check-inline form-switch">
+          <input class="form-check-input" type="radio" name="interface" value="rstudio"
+                  {% if "default_url" in custom and custom["default_url"] == "/rstudio" %}checked{% endif %} />
+          <label class="form-check-label">RStudio</label>
+        </div>
+        <div class="form-check form-check-inline form-switch">
+          <input class="form-check-input" type="radio" name="interface" value="lab"
+                  {% if "default_url" in custom and custom["default_url"] == "/lab" %}checked{% endif %} />
+          <label class="form-check-label">JupyterLab</label>
+        </div>
       </div>
     </form>
     <a role="button" id="login-button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
@@ -80,7 +74,7 @@
     {% endif %}
   </div>
 
-  <div class="col-md-8 col-md-offset-2 details">
+  <div class="row col-md-8 mx-auto details">
     <div class="col-md-6">
       <big class="details-welcome lead">
       Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> <strong>2i2c JupyterHub</strong>.
@@ -91,12 +85,12 @@
       See <a href="https://2i2c.org/pilot">the 2i2c Pilot documentation</a> for usage and deployment information.</p>
     </div>
     <div class="col-md-6 details-logos">
-      <div class="pull-right">
+      <div class="float-end">
         <a href="https://jupyter.org">
           <img src="{{static_url("extra-assets/images/jupyter-logo.svg") }}" alt='Jupyter' height="64" />
         </a>
       </div>
-      <div class="pull-right">
+      <div class="float-end">
         <a href="https://rstudio.com">
           <img src="{{static_url("extra-assets/images/rstudio-logo.svg") }}" alt='RStudio' height="64"/>
         </a>
@@ -106,7 +100,7 @@
   </div>
 
   {% if custom.announcements is defined %}
-    <div class="col-md-8 col-md-offset-2 announcements" >
+    <div class="col-md-8 mx-auto announcements" >
       {% for announcement in custom.announcements %}
       <div class="announcements-text">
         {{ announcement | safe }}
@@ -115,7 +109,7 @@
     </div>
   {% endif %}
 
-  <div class="col-md-8 col-md-offset-2 questions">
+  <div class="col-md-8 mx-auto questions">
     <div>
       <h4>Where can I learn more?</h4>
 

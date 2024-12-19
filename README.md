@@ -20,6 +20,11 @@ In this repositories there are some branches that provide alternatives to the de
 
    This branch is useful for hubs that might serve a binderhub-style page right after login instead of the spawning regular UI. In this case, the sections after the login button are not that relevant and removing them makes expectations more clear.
 
+3. **The [bootstrap5](https://github.com/2i2c-org/default-hub-homepage/tree/bootstrap5) branch**
+
+   This branch is compatible with bootstrap5 and implicitly with JupyterHub >= version 5.0.0
+   Use this branch if your hub is using this version, otherwise the pages will not render nicely.
+
 
 ## Local development
 

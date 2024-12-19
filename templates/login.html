@@ -77,21 +77,21 @@
   <div class="row col-md-8 mx-auto details">
     <div class="col-md-6">
       <big class="details-welcome lead">
-      Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> <strong>2i2c JupyterHub</strong>.
+      Welcome to the <a href="{{ custom.org.url }}" class="text-decoration-none">{{ custom.org.name }}</a> <strong>2i2c JupyterHub</strong>.
       </big>
       <br />
       <br />
       This is a pilot service running on open source infrastructure.
-      See <a href="https://2i2c.org/pilot">the 2i2c Pilot documentation</a> for usage and deployment information.</p>
+      See <a href="https://2i2c.org/pilot" class="text-decoration-none">the 2i2c Pilot documentation</a> for usage and deployment information.</p>
     </div>
     <div class="col-md-6 details-logos">
       <div class="float-end">
-        <a href="https://jupyter.org">
+        <a href="https://jupyter.org" class="text-decoration-none">
           <img src="{{static_url("extra-assets/images/jupyter-logo.svg") }}" alt='Jupyter' height="64" />
         </a>
       </div>
       <div class="float-end">
-        <a href="https://rstudio.com">
+        <a href="https://rstudio.com" class="text-decoration-none">
           <img src="{{static_url("extra-assets/images/rstudio-logo.svg") }}" alt='RStudio' height="64"/>
         </a>
       </div>
@@ -116,13 +116,13 @@
       {% if custom.learn_more is defined %}
         {{ custom.learn_more | safe }}
       {% else %}
-        The <a href="https://2i2c.org/pilot">2i2c Pilot Hubs Documentation</a> has all of the information that you need to use the hub, as well as information about the deployment technology.
+        The <a href="https://2i2c.org/pilot" class="text-decoration-none">2i2c Pilot Hubs Documentation</a> has all of the information that you need to use the hub, as well as information about the deployment technology.
       {% endif %}
     </div>
     <div>
       <h4>What is a Jupyter Notebook?</h4>
 
-      <a href="https://jupyter.org">Jupyter Notebook</a> is an open-source web application that allows you to create and
+      <a href="https://jupyter.org" class="text-decoration-none">Jupyter Notebook</a> is an open-source web application that allows you to create and
       share documents that contain live code, equations, visualizations and narrative
       text. Uses include: data cleaning and transformation, numerical simulation,
       statistical modeling, data visualization, machine learning, and much more.
@@ -131,7 +131,7 @@
 
     <div>
       <h4>What is JupyterHub?</h4>
-      <a href="https://github.com/jupyterhub/jupyterhub">JupyterHub</a> brings
+      <a href="https://github.com/jupyterhub/jupyterhub" class="text-decoration-none">JupyterHub</a> brings
       the power of notebooks to groups of users. It gives users access to
       computational environments and resources without burdening the users with
       installation and maintenance tasks. Users - including students,

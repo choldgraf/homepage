@@ -19,6 +19,11 @@
     font-weight: bold;
 }
 
+[data-bs-theme="dark"] #operated-by a {
+    color: lightgray;
+    font-weight: bold;
+}
+
 .details {
     margin-top: 32px;
 }
@@ -26,6 +31,10 @@
 .details-welcome {
     color: black;
 }
+
+[data-bs-theme="dark"] .details-welcome {
+    color: white;
+  }
 
 .details-logos img {
     margin: 12px;

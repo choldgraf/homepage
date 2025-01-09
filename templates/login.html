@@ -17,7 +17,7 @@
 {% block main %}
 <div class="container login-header" id="home" data-authenticator-login-url="{{authenticator_login_url}}">
   <div class="text-center">
-    <p class="hub-login-text">2i2c JupyterHub para <a href="{{ custom.org.url }}">{{ custom.org.name }}</a></p><br />
+    <p class="hub-login-text">2i2c JupyterHub para <a href="{{ custom.org.url }}" class="text-decoration-none">{{ custom.org.name }}</a></p><br />
     <a href="{{ custom.org.url }}">
       <img src="{{ custom.org.logo_url }}" alt="Logo de {{ custom.org.name }}" class='hub-logo'
         title='logo del hub' />
@@ -26,48 +26,42 @@
       {%- if custom.operated_by.custom_html %}
       Operado por: {{ custom.operated_by.custom_html | safe }} |
       {%- else %}
-      Operado por: <a href="{{ custom.operated_by.url }}">{{ custom.operated_by.name }}</a> |
+      Operado por: <a href="{{ custom.operated_by.url }}" class="text-decoration-none">{{ custom.operated_by.name }}</a> |
       {%- endif %}
 
       {%- if custom.funded_by.custom_html %}
       Financiado por: {{ custom.funded_by.custom_html | safe }} |
       {%- else %}
-      Financiado por: <a href="{{ custom.funded_by.url }}">{{ custom.funded_by.name }}</a> |
+      Financiado por: <a href="{{ custom.funded_by.url }}" class="text-decoration-none">{{ custom.funded_by.name }}</a> |
       {%- endif %}
 
       {%- if custom.designed_by.custom_html %}
       Diseñado por: {{ custom.designed_by.custom_html | safe }}
       {%- else %}
-      Diseñado por: <a href="{{ custom.designed_by.url }}">{{ custom.designed_by.name }}</a>
+      Diseñado por: <a href="{{ custom.designed_by.url }}" class="text-decoration-none">{{ custom.designed_by.name }}</a>
       {%- endif %}
   </div>
   </div>
   <div class="login-container text-center">
     {% if "interface_selector" in custom and custom["interface_selector"] and (not next or next == "%2Fhub%2F") %}
-    <form class="form-inline">
-      <div class="form-group interface-selector">
-        <label>Después de iniciar sesión, abrir: </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="tree"
-                 {% if "default_url" not in custom or custom["default_url"] == "/tree" %}
-                 checked
-                 {% endif %}
-                 >Jupyter Notebook
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="rstudio"
-                 {% if "default_url" in custom and custom["default_url"] == "/rstudio" %}
-                 checked
-                 {% endif %}
-                 >RStudio
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="lab"
-                 {% if "default_url" in custom and custom["default_url"] == "/lab" %}
-                 checked
-                 {% endif %}
-                 >JupyterLab
-        </label>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Después de iniciar sesión, abrir:</label>
+        <div class="form-check form-check-inline form-switch">
+          <input class="form-check-input" type="radio" name="interface" value="tree"
+                  {% if "default_url" not in custom or custom["default_url"] == "/tree" %}checked{% endif %} />
+          <label class="form-check-label">Jupyter Notebook</label>
+        </div>
+        <div class="form-check form-check-inline form-switch">
+          <input class="form-check-input" type="radio" name="interface" value="rstudio"
+                  {% if "default_url" in custom and custom["default_url"] == "/rstudio" %}checked{% endif %} />
+          <label class="form-check-label">RStudio</label>
+        </div>
+        <div class="form-check form-check-inline form-switch">
+          <input class="form-check-input" type="radio" name="interface" value="lab"
+                  {% if "default_url" in custom and custom["default_url"] == "/lab" %}checked{% endif %} />
+          <label class="form-check-label">JupyterLab</label>
+        </div>
       </div>
     </form>
     <a role="button" id="login-button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
@@ -80,24 +74,24 @@
     {% endif %}
   </div>
 
-  <div class="col-md-8 col-md-offset-2 details">
+  <div class="row col-md-8 mx-auto details">
     <div class="col-md-6">
       <big class="details-welcome lead">
-      Le damos la bienvenida al <strong>2i2c JupyterHub</strong> de <a href="{{ custom.org.url }}">{{ custom.org.name }}</a>.
+      Le damos la bienvenida al <a href="{{ custom.org.url }}" class="text-decoration-none">{{ custom.org.name }}</a> <strong>2i2c JupyterHub</strong>.
       </big>
       <br />
       <br />
-      Se trata de un servicio piloto que se ejecuta en infraestructura de código abierto.
-      Consulte <a href="https://2i2c.org/pilot">la documentación de 2i2c Pilot</a> para obtener más información sobre su uso e implementación.</p>
+      Se trata de un servicio que se ejecuta en infraestructura de código abierto.
+      Consulte <a href="https://docs.2i2c.org" class="text-decoration-none">la documentación de 2i2c</a> para obtener más información sobre su uso e implementación.</p>
     </div>
     <div class="col-md-6 details-logos">
-      <div class="pull-right">
-        <a href="https://jupyter.org">
+      <div class="float-end">
+        <a href="https://jupyter.org" class="text-decoration-none">
           <img src="{{static_url("extra-assets/images/jupyter-logo.svg") }}" alt='Jupyter' height="64" />
         </a>
       </div>
-      <div class="pull-right">
-        <a href="https://rstudio.com">
+      <div class="float-end">
+        <a href="https://rstudio.com" class="text-decoration-none">
           <img src="{{static_url("extra-assets/images/rstudio-logo.svg") }}" alt='RStudio' height="64"/>
         </a>
       </div>
@@ -106,7 +100,7 @@
   </div>
 
   {% if custom.announcements is defined %}
-    <div class="col-md-8 col-md-offset-2 announcements" >
+    <div class="col-md-8 mx-auto announcements" >
       {% for announcement in custom.announcements %}
       <div class="announcements-text">
         {{ announcement | safe }}
@@ -115,23 +109,23 @@
     </div>
   {% endif %}
 
-  <div class="col-md-8 col-md-offset-2 questions">
+  <div class="col-md-8 mx-auto questions">
     <div>
       <h4>¿Dónde puedo obtener más información?</h4>
 
-      La <a href="https://2i2c.org/pilot">documentación de 2i2c Pilot Hubs</a> tiene toda la información que necesita para usar el hub, así como información sobre la tecnología de implementación.
+      La <a href="https://docs.2i2c.org/" class="text-decoration-none">documentación de 2i2c Hubs</a> tiene toda la información que necesita para usar el hub, así como información sobre la tecnología de implementación.
     </div>
     <div>
       <h4>¿Qué es un Jupyter Notebook?</h4>
 
-      <a href="https://jupyter.org">Jupyter Notebook</a> es una aplicación web de código abierto que le permite crear y
+      <a href="https://jupyter.org" class="text-decoration-none">Jupyter Notebook</a> es una aplicación web de código abierto que le permite crear y
       compartir documentos que contienen código en vivo, ecuaciones, visualizaciones y texto narrativo. Entre sus usos se incluyen: limpieza y transformación de los datos, simulaciones numéricas, modelado estadístico, visualización de los datos, aprendizaje automático y mucho más.
 
     </div>
 
     <div>
       <h4>¿Qué es JupyterHub?</h4>
-      <a href="https://github.com/jupyterhub/jupyterhub">JupyterHub</a> proporciona
+      <a href="https://github.com/jupyterhub/jupyterhub" class="text-decoration-none">JupyterHub</a> proporciona
       el poder de las notebooks a grupos de personas usuarias. Permite a las personas usuarias acceder a
       entornos y recursos informáticos sin abrumarlas con
       tareas de instalación y mantenimiento. Las personas usuarias,  incluidas estudiantes,
@@ -153,8 +147,8 @@
   <div class="footer">
     <p>
       Este servicio se ejecuta de manera transparente desde
-      <a href="https://github.com/2i2c-org/pilot-hubs">
-        github.com/2i2c-org/pilot-hubs
+      <a href="https://github.com/2i2c-org/infrastructure">
+        github.com/2i2c-org/infrastructure
       </a>
     </p>
     <p>

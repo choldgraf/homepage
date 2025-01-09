@@ -57,41 +57,46 @@
 </div>
 
 <div class="container login-header" id="home" data-authenticator-login-url="{{authenticator_login_url}}">
-  <div class="logos col-md-12 text-center">
-    <img src="{{static_url("extra-assets/images/logos/nasa.png") }}" alt='NASA logo' height="96" />
-    <img src="{{static_url("extra-assets/images/logos/epa.svg") }}" alt='EPA logo' height="96" />
-    <img src="{{static_url("extra-assets/images/logos/nist.png") }}" alt='NIST logo' height="96" />
-    <img src="{{static_url("extra-assets/images/logos/noaa.png") }}" alt='NOAA logo' height="96" />
+  <div class="row">
+    <div class="logos col-12 text-center">
+      <img src="{{static_url('extra-assets/images/logos/nasa.png')}}" alt="NASA logo" height="96" />
+      <img src="{{static_url('extra-assets/images/logos/epa.svg')}}" alt="EPA logo" height="96" />
+      <img src="{{static_url('extra-assets/images/logos/nist.png')}}" alt="NIST logo" height="96" />
+      <img src="{{static_url('extra-assets/images/logos/noaa.png')}}" alt="NOAA logo" height="96" />
+    </div>
   </div>
 
-
-  <div class="col-md-8 col-md-push-2 card">
-      <h1 class="lead">
-      Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> JupyterHub.
+  <div class="row justify-content-center mx-auto">
+    <div class="col-md-8 card border-0">
+      <h1 class="lead text-center">
+        Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> JupyterHub.
       </h1>
       <p class="text-center">
         <span id="new-user"> New user? </span> Please see our documentation about <a href="https://us-ghg-center.github.io/ghgc-docs/services/jupyterhub.html">how to request access</a>.
       </p>
-    <div class="login-container text-center">
-      <a role="button" id="login-button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
-        Log in to continue
-      </a>
+      <div class="login-container text-center">
+        <a role="button" id="login-button" class="btn btn-jupyter btn-lg" href="{{authenticator_login_url}}">
+          Log in to continue
+        </a>
+      </div>
     </div>
-  
   </div>
 
-    <div class="footer col-md-12">
-    <p>
-      This service is run transparently from <a href="https://github.com/2i2c-org/infrastructure">github.com/2i2c-org/infrastructure</a> by <a href="https://2i2c.org">2i2c.org</a>
-    </p>
-    <p>
-      Built with
-      <a href="https://k8s.org">Kubernetes</a>,
-      <a href="https://helm.sh">Helm</a>,
-      <a href="https://docker.com">Docker</a>,
-      <a href="https://github.com/conda-forge/miniforge">Miniforge</a> and
-      many parts of the <a href="https://jupyter.org">Jupyter Project</a>
+  <div class="row">
+    <div class="footer col-12 text-center">
+      <p>
+        This service is run transparently from <a href="https://github.com/2i2c-org/infrastructure">github.com/2i2c-org/infrastructure</a> by <a href="https://2i2c.org">2i2c.org</a>
       </p>
+      <p>
+        Built with
+        <a href="https://k8s.org">Kubernetes</a>,
+        <a href="https://helm.sh">Helm</a>,
+        <a href="https://docker.com">Docker</a>,
+        <a href="https://github.com/conda-forge/miniforge">Miniforge</a> and
+        many parts of the <a href="https://jupyter.org">Jupyter Project</a>
+      </p>
+    </div>
   </div>
 </div>
+
 {% endblock %}

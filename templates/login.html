@@ -17,7 +17,7 @@
 {% block main %}
 <div class="container login-header" id="home" data-authenticator-login-url="{{authenticator_login_url}}">
   <div class="text-center">
-    <p class="hub-login-text">El JupyterHub-2i2c para <a href="{{ custom.org.url }}">{{ custom.org.name }}</a></p><br />
+    <p class="hub-login-text">El JupyterHub-2i2c para <a href="{{ custom.org.url }}" class="text-decoration-none" > {{ custom.org.name }}</a></p><br />
     <a href="{{ custom.org.url }}">
       <img src="{{ custom.org.logo_url }}" alt="{{ custom.org.name }} logo" class='hub-logo'
         title='hub logo' />
@@ -26,50 +26,24 @@
       {%- if custom.operated_by.custom_html %}
       Operación: {{ custom.operated_by.custom_html | safe }} |
       {%- else %}
-      Operación: <a href="{{ custom.operated_by.url }}">{{ custom.operated_by.name }}</a> |
+      Operación: <a href="{{ custom.operated_by.url }}" class="text-decoration-none">{{ custom.operated_by.name }}</a> |
       {%- endif %}
 
       {%- if custom.funded_by.custom_html %}
       Financiamiento: {{ custom.funded_by.custom_html | safe }} |
       {%- else %}
-      Financiamiento: <a href="{{ custom.funded_by.url }}">{{ custom.funded_by.name }}</a> |
+      Financiamiento: <a href="{{ custom.funded_by.url }}" class="text-decoration-none">{{ custom.funded_by.name }}</a> |
       {%- endif %}
 
       {%- if custom.designed_by.custom_html %}
       Diseño: {{ custom.designed_by.custom_html | safe }}
       {%- else %}
-      Diseño: <a href="{{ custom.designed_by.url }}">{{ custom.designed_by.name }}</a>
+      Diseño: <a href="{{ custom.designed_by.url }}" class="text-decoration-none">{{ custom.designed_by.name }}</a>
       {%- endif %}
   </div>
   </div>
   <div class="login-container text-center">
     {% if "interface_selector" in custom and custom["interface_selector"] and (not next or next == "%2Fhub%2F") %}
-    <form class="form-inline">
-      <div class="form-group interface-selector">
-        <label>After logging in, open: </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="tree"
-                 {% if "default_url" not in custom or custom["default_url"] == "/tree" %}
-                 checked
-                 {% endif %}
-                 >Jupyter Notebook
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="rstudio"
-                 {% if "default_url" in custom and custom["default_url"] == "/rstudio" %}
-                 checked
-                 {% endif %}
-                 >RStudio
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="interface" value="lab"
-                 {% if "default_url" in custom and custom["default_url"] == "/lab" %}
-                 checked
-                 {% endif %}
-                 >JupyterLab
-        </label>
-      </div>
-    </form>
     <a role="button" id="login-button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
       Log in para comenzar
     </a>
@@ -80,39 +54,39 @@
     {% endif %}
   </div>
 
-  <div class="col-md-8 col-md-offset-2 details">
+  <div class="row col-md-8 mx-auto details">
     <div class="col-md-6">
       <big class="details-welcome lead">
-        ¡Bienvenida/o al <strong>JupyterHub-2i2c</strong> de <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> 
+        ¡Bienvenida/o al <strong>JupyterHub-2i2c</strong> de <a href="{{ custom.org.url }}" class="text-decoration-none">{{ custom.org.name }}</a> 
         para los eventos de Octubre-Noviembre 2024! Estos eventos son patrocinados
-        por <a href="https://intercoonecta.aecid.es/">AECID-Intercoonecta</a> y <a href="https://www.csic.es/es">CSIC</a>.
+        por <a href="https://intercoonecta.aecid.es/" class="text-decoration-none">AECID-Intercoonecta</a> y <a href="https://www.csic.es/es" class="text-decoration-none">CSIC</a>.
         <br />
         Esta plataforma da acceso a entornos de <strong>Python utilizando JupyterLab</strong> y de <strong>R utilizando RStudio</strong>.
         El interfaz de JupyterLab inicialmente aparecerá en Inglés por defecto. Para cambiarlo al español, ver las 
-        <a href="https://github.com/Intercoonecta/Aula-invertida/blob/main/Intro-a-Jupyter/jupyter-tutorial.md#cambiar-el-interfaz-al-espa%C3%B1ol">instrucciones que hemos desarrollado</a>.        
+        <a href="https://github.com/Intercoonecta/Aula-invertida/blob/main/Intro-a-Jupyter/jupyter-tutorial.md#cambiar-el-interfaz-al-espa%C3%B1ol" class="text-decoration-none">instrucciones que hemos desarrollado</a>.
       </big>
       <br />
-      <br />      
+      <br />
       <big>
-        El resto del año, este servicio es manejado por la iniciativa <a href="https://oceanhackweek.org">OceanHackWeek</a>. Agradecemos su colaboración.
+        El resto del año, este servicio es manejado por la iniciativa <a href="https://oceanhackweek.org" class="text-decoration-none">OceanHackWeek</a>. Agradecemos su colaboración.
       </big>
       <br />
       <br />
       Este servicio corre sobre infraestructura de código abierto. Para mayor información, consulte
-      la <a href="https://2i2c.org/pilot">documentación (en inglés)</a>.
+      la <a href="https://2i2c.org/pilot" class="text-decoration-none">documentación (en inglés)</a>.
     </div>
     <div class="col-md-6 details-logos">
       <big class="details-welcome lead">
         Welcome to the <strong>OceanHackWeek 2i2c JupyterHub!</strong> From October to November 2024,
-        this hub will prioritize support for two events by the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> group 
+        this hub will prioritize support for two events by the <a href="{{ custom.org.url }}" class="text-decoration-none">{{ custom.org.name }}</a> group 
         taking place, October 15-18 and November 25-29. 
         This is a virtual program fully in Spanish serving participants from throughout Latin America.
         <br>
         <br>
-        <em>If you still have access through a previous <a href="https://oceanhackweek.org">OceanHackWeek</a> event and are not participating in this event, please use this hub lightly.</em> 
+        <em>If you still have access through a previous <a href="https://oceanhackweek.org" class="text-decoration-none">OceanHackWeek</a> event and are not participating in this event, please use this hub lightly.</em> 
       </big>
       <br>
-      <br>      
+      <br>
       This service runs on open source infrastructure.
       See <a href="https://2i2c.org/pilot">the 2i2c Pilot documentation</a> for usage and deployment information.
     </div>
@@ -133,7 +107,7 @@
 
 
   {% if custom.announcements is defined %}
-    <div class="col-md-8 col-md-offset-2 announcements" >
+    <div class="col-md-8 mx-auto announcements" >
       {% for announcement in custom.announcements %}
       <div class="announcements-text">
         {{ announcement | safe }}
@@ -142,20 +116,20 @@
     </div>
   {% endif %}
 
-  <div class="col-md-8 col-md-offset-2 questions">
+  <div class="col-md-8 mx-auto questions">
     <div>
       <h4>Where can I learn more?</h4>
 
       {% if custom.learn_more is defined %}
         {{ custom.learn_more | safe }}
       {% else %}
-        The <a href="https://2i2c.org/pilot">2i2c Pilot Hubs Documentation</a> has all of the information that you need to use the hub, as well as information about the deployment technology.
+        The <a href="https://2i2c.org/pilot" class="text-decoration-none">2i2c Pilot Hubs Documentation</a> has all of the information that you need to use the hub, as well as information about the deployment technology.
       {% endif %}
     </div>
     <div>
       <h4>What is a Jupyter Notebook?</h4>
 
-      <a href="https://jupyter.org">Jupyter Notebook</a> is an open-source web application that allows you to create and
+      <a href="https://jupyter.org" class="text-decoration-none">Jupyter Notebook</a> is an open-source web application that allows you to create and
       share documents that contain live code, equations, visualizations and narrative
       text. Uses include: data cleaning and transformation, numerical simulation,
       statistical modeling, data visualization, machine learning, and much more.
@@ -164,7 +138,7 @@
 
     <div>
       <h4>What is JupyterHub?</h4>
-      <a href="https://github.com/jupyterhub/jupyterhub">JupyterHub</a> brings
+      <a href="https://github.com/jupyterhub/jupyterhub" class="text-decoration-none">JupyterHub</a> brings
       the power of notebooks to groups of users. It gives users access to
       computational environments and resources without burdening the users with
       installation and maintenance tasks. Users - including students,

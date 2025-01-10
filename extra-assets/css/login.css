@@ -23,6 +23,11 @@
     font-weight: bold;
 }
 
+[data-bs-theme="dark"] .lead {
+    color: lightgray;
+    font-weight: bold;
+}
+
 #new-user {
     font-weight: 600;
 }
